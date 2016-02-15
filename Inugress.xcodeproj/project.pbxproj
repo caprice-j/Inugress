@@ -21,6 +21,8 @@
 		472E1CE81C546868005E3FE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CE71C546868005E3FE0 /* LICENSE */; };
 		472E1CEB1C5478A5005E3FE0 /* mean_224.bin in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEA1C5478A5005E3FE0 /* mean_224.bin */; };
 		472E1CED1C5484FA005E3FE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEC1C5484FA005E3FE0 /* LICENSE */; };
+		74F86F521C71C597000479E5 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F511C71C597000479E5 /* TopViewController.swift */; };
+		74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F531C71C95C000479E5 /* DogTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,9 @@
 		472E1CE71C546868005E3FE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		472E1CEA1C5478A5005E3FE0 /* mean_224.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = mean_224.bin; sourceTree = "<group>"; };
 		472E1CEC1C5484FA005E3FE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inugress-Bridging-Header.h"; sourceTree = "<group>"; };
+		74F86F511C71C597000479E5 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
+		74F86F531C71C95C000479E5 /* DogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +93,9 @@
 				472E1CCF1C545B31005E3FE0 /* LaunchScreen.storyboard */,
 				472E1CD21C545B31005E3FE0 /* Info.plist */,
 				472E1CC11C545B31005E3FE0 /* Supporting Files */,
+				74F86F511C71C597000479E5 /* TopViewController.swift */,
+				74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */,
+				74F86F531C71C95C000479E5 /* DogTableViewController.swift */,
 			);
 			path = WhatIsThis;
 			sourceTree = "<group>";
@@ -199,10 +207,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */,
 				472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.cc in Sources */,
 				472E1CC91C545B31005E3FE0 /* ViewController.mm in Sources */,
 				472E1CC61C545B31005E3FE0 /* AppDelegate.m in Sources */,
 				472E1CC31C545B31005E3FE0 /* main.m in Sources */,
+				74F86F521C71C597000479E5 /* TopViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WhatIsThis/Info.plist;
@@ -319,6 +330,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = caprice.Inugress;
 				PRODUCT_NAME = Inugress;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WhatIsThis/Inugress-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -326,6 +339,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = WhatIsThis/Info.plist;
@@ -333,6 +347,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = caprice.Inugress;
 				PRODUCT_NAME = Inugress;
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "WhatIsThis/Inugress-Bridging-Header.h";
 			};
 			name = Release;
 		};
