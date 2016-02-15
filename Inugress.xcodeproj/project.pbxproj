@@ -23,6 +23,8 @@
 		472E1CED1C5484FA005E3FE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEC1C5484FA005E3FE0 /* LICENSE */; };
 		74F86F521C71C597000479E5 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F511C71C597000479E5 /* TopViewController.swift */; };
 		74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F531C71C95C000479E5 /* DogTableViewController.swift */; };
+		74F86F571C71CDEA000479E5 /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */; };
+		74F86F581C71CDEA000479E5 /* DogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inugress-Bridging-Header.h"; sourceTree = "<group>"; };
 		74F86F511C71C597000479E5 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		74F86F531C71C95C000479E5 /* DogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogTableViewController.swift; sourceTree = "<group>"; };
+		74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogTableViewCell.swift; sourceTree = "<group>"; };
+		74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DogTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +100,8 @@
 				74F86F511C71C597000479E5 /* TopViewController.swift */,
 				74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */,
 				74F86F531C71C95C000479E5 /* DogTableViewController.swift */,
+				74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */,
+				74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */,
 			);
 			path = WhatIsThis;
 			sourceTree = "<group>";
@@ -192,6 +198,7 @@
 				472E1CE81C546868005E3FE0 /* LICENSE in Resources */,
 				472E1CE41C546859005E3FE0 /* Inception_BN-symbol.json in Resources */,
 				472E1CEB1C5478A5005E3FE0 /* mean_224.bin in Resources */,
+				74F86F581C71CDEA000479E5 /* DogTableViewCell.xib in Resources */,
 				472E1CCE1C545B31005E3FE0 /* Assets.xcassets in Resources */,
 				472E1CE61C546859005E3FE0 /* synset.txt in Resources */,
 				472E1CED1C5484FA005E3FE0 /* LICENSE in Resources */,
@@ -209,6 +216,7 @@
 			files = (
 				74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */,
 				472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.cc in Sources */,
+				74F86F571C71CDEA000479E5 /* DogTableViewCell.swift in Sources */,
 				472E1CC91C545B31005E3FE0 /* ViewController.mm in Sources */,
 				472E1CC61C545B31005E3FE0 /* AppDelegate.m in Sources */,
 				472E1CC31C545B31005E3FE0 /* main.m in Sources */,

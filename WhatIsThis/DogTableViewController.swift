@@ -10,6 +10,11 @@ import UIKit
 
 class DogTableViewController: UITableViewController {
 
+    var wordArray: [AnyObject] = []
+    let saveData = NSUserDefaults.standardUserDefaults()
+    
+    let savedKey: String = "KEY_S"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +23,42 @@ class DogTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        // dogCell is written in the dattribute inspector in DogTableViewCell.xlib
+        tableView.registerNib( UINib(nibName: "DogTableViewCell", bundle:nil), forCellReuseIdentifier: "dogCell")
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if saveData.arrayForKey(savedKey) != nil {
+            wordArray = saveData.arrayForKey(savedKey)!
+        }
+        tableView.reloadData()
+    }
+    
+    // specify the number of sections
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    // specify the number of cells
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return wordArray.count
+    }
+    
+    // specify how to display cell contents
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("dogCell", forIndexPath: indexPath) as! DogTableViewCell
+        
+        let nowIndexPathDictionary : (AnyObject) = wordArray[indexPath.row]
+        
+//        cell.labelA.text = nowIndexPathDictionary["english"] as? String
+        cell.labelA.text = "testtest"
+        
+        return cell
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -26,16 +66,6 @@ class DogTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

@@ -10,10 +10,18 @@ import UIKit
 
 class TopViewController: UIViewController {
 
+    // NSDefaultsをすべて消したいとき
+    func clearAllNSDefaultsData () {
+        
+        let appDomain = NSBundle.mainBundle().bundleIdentifier!
+        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        
+        clearAllNSDefaultsData()
     }
 
     override func didReceiveMemoryWarning() {
