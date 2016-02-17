@@ -68,7 +68,27 @@
     }
     std::vector<float> outputs(tt_size);
     MXPredGetOutput(predictor, 0, outputs.data(), tt_size);
-    size_t max_idx = std::distance(outputs.begin(), std::max_element(outputs.begin(), outputs.end()));
+
+    
+    // size_t max_idx = std::distance(outputs.begin(), outputs.begin()); すると 最初の "Tinca" が返る
+    // std::distance(outputs.begin(), outputs.begin()+151) は "チワワ" (最初の犬カテゴリ)
+    // std::distance(outputs.begin(), outputs.begin()+268) は "メキシカン・ヘアレス・ドッグ" (最後の犬カテゴリ)
+
+    
+    // 1 ~ 1000 の全カテゴリに対してマッチングする場合は以下の１行
+    size_t allMaxIdx = std::distance(outputs.begin(), std::max_element(outputs.begin(), outputs.end()));
+    NSLog(@"AllMaxProbability: %f", outputs[allMaxIdx] );
+    NSLog([[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "]);
+
+    
+    
+    // 犬種のラベルが付けられた152 ~ 269 番の中で確率最大のものを探すのであればこれ
+    size_t max_idx = std::distance(outputs.begin(),
+                                   std::max_element(outputs.begin()+151, outputs.begin()+268 ));
+
+    NSLog([[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "]);
+    NSLog(@"maxProbability: %f", outputs[max_idx] );
+    
     return [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
 }
 
