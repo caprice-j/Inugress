@@ -1,72 +1,58 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="dww-64-f6y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="dww-64-f6y">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="hgb-Q7-4wV">
-                                <rect key="frame" x="76" y="30" width="223" height="547"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="5uT-4f-HMh">
-                                        <rect key="frame" x="0.0" y="0.0" width="223" height="298"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="5uT-4f-HMh" secondAttribute="height" multiplier="3:4" id="nXE-N0-lXr"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="154" translatesAutoresizingMaskIntoConstraints="NO" id="dje-xX-ydn">
-                                        <rect key="frame" x="78" y="306" width="68" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YFi-JG-R39">
-                                        <rect key="frame" x="73" y="335" width="77" height="136"/>
-                                        <state key="normal" title="Take Photo"/>
-                                        <connections>
-                                            <action selector="capturePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ycr-pd-Zyj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-7p-XJv">
-                                        <rect key="frame" x="73" y="479" width="78" height="30"/>
-                                        <state key="normal" title="Save Photo"/>
-                                        <connections>
-                                            <action selector="saveSelectedImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="890-j5-16I"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fEo-C7-pyA">
-                                        <rect key="frame" x="68" y="517" width="88" height="30"/>
-                                        <state key="normal" title="Select Photo"/>
-                                        <connections>
-                                            <action selector="selectPhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kXf-9V-6R6"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" id="5uT-4f-HMh">
+                                <rect key="frame" x="20" y="77" width="342" height="234"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dje-xX-ydn">
+                                <rect key="frame" x="20" y="323" width="342" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YFi-JG-R39">
+                                <rect key="frame" x="232" y="388" width="77" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take Photo"/>
+                                <connections>
+                                    <action selector="capturePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ycr-pd-Zyj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fEo-C7-pyA">
+                                <rect key="frame" x="50" y="441" width="88" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Select Photo"/>
+                                <connections>
+                                    <action selector="selectPhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kXf-9V-6R6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TTE-7p-XJv">
+                                <rect key="frame" x="146" y="494" width="78" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save Photo"/>
+                                <connections>
+                                    <action selector="saveSelectedImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="890-j5-16I"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="hgb-Q7-4wV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="60" id="A9w-DZ-vBR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hgb-Q7-4wV" secondAttribute="bottom" constant="2" id="sp0-eD-pvC"/>
-                            <constraint firstItem="hgb-Q7-4wV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="v68-Sq-ZI8"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hgb-Q7-4wV" secondAttribute="trailing" constant="60" id="y6P-d6-5oH"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" id="dPa-NJ-oFc"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="imageViewPhoto" destination="5uT-4f-HMh" id="uXC-Fd-HJX"/>
@@ -75,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637" y="-479"/>
+            <point key="canvasLocation" x="1289.5" y="-422.5"/>
         </scene>
         <!--図鑑-->
         <scene sceneID="HSZ-PG-vn8">
@@ -103,12 +89,12 @@
                     <navigationItem key="navigationItem" title="図鑑" id="St6-r1-PVU">
                         <barButtonItem key="leftBarButtonItem" title="タイトルに戻る" id="vdI-vf-O4O">
                             <connections>
-                                <segue destination="dww-64-f6y" kind="show" id="Pdy-fV-uVt"/>
+                                <segue destination="dww-64-f6y" kind="modal" id="KWn-XY-Pns"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="撮影する" id="vcn-KA-s4y">
                             <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" id="dOC-jw-GlO"/>
+                                <segue destination="BYZ-38-t0r" kind="push" id="3UM-xR-FFz"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -116,50 +102,50 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUD-Xp-0GZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1093.5" y="-445.5"/>
+            <point key="canvasLocation" x="822.5" y="-422.5"/>
         </scene>
         <!--Top View Controller-->
         <scene sceneID="klc-Uj-5xg">
             <objects>
                 <viewController id="dww-64-f6y" customClass="TopViewController" customModule="Inugress" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ddT-L0-QRL"/>
-                        <viewControllerLayoutGuide type="bottom" id="Cfm-BE-dtQ"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="X1R-we-dCE">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Inugress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qB-GE-7ab">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inugress" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="9qB-GE-7ab">
                                 <rect key="frame" x="152" y="227" width="66" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="いぬぐれす" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykq-Sh-ULx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="いぬぐれす" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ykq-Sh-ULx">
                                 <rect key="frame" x="143" y="270" width="85" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s4Y-6t-gzO">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="s4Y-6t-gzO">
                                 <rect key="frame" x="2" y="406" width="370" height="61"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.38835470600188188" green="0.51039931082446677" blue="0.6292743782722513" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="TAP TO START">
                                     <color key="titleColor" red="1" green="0.98093986529999999" blue="0.84992832159999998" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FWp-4i-dta" kind="show" id="RiG-4K-5rd"/>
+                                    <segue destination="FWp-4i-dta" kind="modal" id="Oa9-Kx-1Hz"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5Mh-o2-46W"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3B-gj-F60" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="183.5" y="-445.5"/>
+            <point key="canvasLocation" x="-216.5" y="-422.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FsG-Rw-ibe">
@@ -178,7 +164,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Glg-Ox-Cv9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="630.5" y="-445.5"/>
+            <point key="canvasLocation" x="310.5" y="-422.5"/>
         </scene>
     </scenes>
 </document>
