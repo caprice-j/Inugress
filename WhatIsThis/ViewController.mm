@@ -88,11 +88,19 @@
 
     NSLog([[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "]);
     NSLog(@"maxProbability: %f", outputs[max_idx] );
+
+    self.allDescriptionLabel.text = [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "];
+    self.allProbabilityLabel.text = [ NSString stringWithFormat:@"%f", outputs[allMaxIdx] ];
+    self.dogProbabilityLabel.text = [ NSString stringWithFormat:@"%f", outputs[max_idx] ];
     
     return [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
 }
 
 - (void)viewDidLoad {
+    
+    self.labelDescription.numberOfLines = 0;
+    self.allDescriptionLabel.numberOfLines = 0;
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     self.indicatorView = [UIActivityIndicatorView new];
@@ -103,7 +111,8 @@
         NSString *paramsPath = [[NSBundle mainBundle] pathForResource:@"Inception_BN-0039.params" ofType:nil];
         NSString *meanPath = [[NSBundle mainBundle] pathForResource:@"mean_224.bin" ofType:nil];
       //NSString *synsetPath = [[NSBundle mainBundle] pathForResource:@"synset.txt" ofType:nil];
-        NSString *synsetPath = [[NSBundle mainBundle] pathForResource:@"synset.jan.txt" ofType:nil];
+      //NSString *synsetPath = [[NSBundle mainBundle] pathForResource:@"synset.jan.txt" ofType:nil];
+        NSString *synsetPath = [[NSBundle mainBundle] pathForResource:@"synset.ej.txt" ofType:nil];
         NSLog(@"%@", meanPath);
         model_symbol = [[NSString alloc] initWithData:[[NSFileManager defaultManager] contentsAtPath:jsonPath] encoding:NSUTF8StringEncoding];
         model_params = [[NSFileManager defaultManager] contentsAtPath:paramsPath];

@@ -24,12 +24,12 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YFi-JG-R39">
-                                <rect key="frame" x="232" y="388" width="77" height="136"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TTE-7p-XJv">
+                                <rect key="frame" x="50" y="494" width="78" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take Photo"/>
+                                <state key="normal" title="Save Photo"/>
                                 <connections>
-                                    <action selector="capturePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ycr-pd-Zyj"/>
+                                    <action selector="saveSelectedImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="890-j5-16I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fEo-C7-pyA">
@@ -40,12 +40,33 @@
                                     <action selector="selectPhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kXf-9V-6R6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TTE-7p-XJv">
-                                <rect key="frame" x="146" y="494" width="78" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CvW-gg-bh2">
+                                <rect key="frame" x="166" y="398" width="196" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save Photo"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1eX-4X-pV4">
+                                <rect key="frame" x="195" y="456" width="160" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hzA-42-1SH">
+                                <rect key="frame" x="195" y="562" width="160" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YFi-JG-R39">
+                                <rect key="frame" x="50" y="505" width="77" height="136"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Take Photo"/>
                                 <connections>
-                                    <action selector="saveSelectedImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="890-j5-16I"/>
+                                    <action selector="capturePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ycr-pd-Zyj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,6 +76,9 @@
                     <navigationItem key="navigationItem" id="dPa-NJ-oFc"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="allDescriptionLabel" destination="1eX-4X-pV4" id="y6r-pP-zF2"/>
+                        <outlet property="allProbabilityLabel" destination="hzA-42-1SH" id="umd-52-Nmn"/>
+                        <outlet property="dogProbabilityLabel" destination="CvW-gg-bh2" id="dhw-Ax-Zv9"/>
                         <outlet property="imageViewPhoto" destination="5uT-4f-HMh" id="uXC-Fd-HJX"/>
                         <outlet property="labelDescription" destination="dje-xX-ydn" id="DkY-aJ-Kvu"/>
                     </connections>
