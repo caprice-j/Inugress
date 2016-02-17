@@ -33,6 +33,9 @@ class DogTableViewController: UITableViewController {
         
         if saveData.arrayForKey(savedKey) != nil {
             wordArray = saveData.arrayForKey(savedKey)!
+            print("record exists")
+        }else{
+            print("no record")
         }
         tableView.reloadData()
     }
@@ -53,8 +56,8 @@ class DogTableViewController: UITableViewController {
         
         let nowIndexPathDictionary : (AnyObject) = wordArray[indexPath.row]
         
-//        cell.labelA.text = nowIndexPathDictionary["english"] as? String
-        cell.labelA.text = "testtest"
+        cell.labelA.text = nowIndexPathDictionary[ "objname" ] as? String
+//        cell.labelA.text = "testtest"
         
         return cell
     }

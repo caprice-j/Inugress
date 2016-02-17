@@ -16,6 +16,7 @@
 
 @implementation ViewController
 
+// 引数として渡された UIImage に写っている物体を認識し、その物体名を文字列で返す
 - (NSString *)predictImage:(UIImage *)image {
 
 
@@ -169,19 +170,37 @@
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+// メイン画面で "Save Photo" ボタンを押したときに呼ばれる関数。
+// 認識された結果である犬の情報を、NSUserDefaults に保存する。
 - (IBAction)saveSelectedImage:(id)sender {
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];  // 取得
+    
 //    [ud setInteger:100 forKey:@"KEY_I"];  // int型の100をKEY_Iというキーで保存
 //    [ud setFloat:1.23 forKey:@"KEY_F"];  // float型の1.23をKEY_Fというキーで保存
 //    [ud setDouble:1.23 forKey:@"KEY_D"];  // double型の1.23をKEY_Dというキーで保存
 //    [ud setBool:YES forKey:@"KEY_B"];  // BOOL型のYESをKEY_Bというキーで保存
 //    [ud setObject:@"あいう" forKey:@"KEY_S"];  // "あいう"をKEY_Sというキーで保存
-    NSMutableArray* array = [NSMutableArray array];
-    [array addObject:@"an object for array 1"];
-    [array addObject:@"an object for array 2"];
-    [array addObject:@"an object for array 3"];
-    [ud setObject:array forKey:@"KEY_S"];
-    [ud synchronize];  // NSUserDefaultsに即時反映させる（即時で無くてもよい場合は不要）
+
+    
+    // NSMutableArray* array = [NSMutableArray array];  // これだと配列が毎回、初期化されてしまう
+    
+    // NSDefaults から、 KEY_S というキーで保存されている配列を読み込む
+    NSArray * savedArrayOfDogInfoDictionary = [ud arrayForKey:@"KEY_S"];
+    
+    // 読み込んだ段階では immutable (変更不可能) なので、 mutable な配列に一度変換する
+    NSMutableArray * mutableArray = [NSMutableArray arrayWithArray:savedArrayOfDogInfoDictionary];
+    
+    // 一枚の写真に写った犬の情報を表す[ 値A, キーA, 値B, キーB, ... , nil ] という dictionary を追加する
+    // self.labelDescription.text には "ウェルシュ・コーギー" や "柴犬" などの認識結果文字列が入っている
+    [mutableArray addObject: [NSDictionary dictionaryWithObjectsAndKeys: self.labelDescription.text, @"objname", nil]  ];
+    
+    // 「 NSUserDefaults に KEY_S というキーで保存されているオブジェクト」を上書きする
+    [ud setObject:mutableArray forKey:@"KEY_S"];
+    
+    [ud synchronize];  // その変更を NSUserDefaults に即時反映させる（即時で無くてもよい場合は不要）
+    
+    NSLog(@"Saved"); // デバッグ用。右下に Saved と表示させる。
+    NSLog(self.labelDescription.text); // デバッグ用。右下に 保存した認識結果の文字列を表示する。
     
 }
 
@@ -192,13 +211,23 @@
         [self.view addSubview:self.indicatorView];
         self.indicatorView.frame = self.view.bounds;
         [self.indicatorView startAnimating];
+        
+        // 非同期 asynchronous に、ニューラルネットワークによる認識処理 (predictImage関数) を進める
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^(){
             dispatch_async(dispatch_get_main_queue(), ^(){
+                
                 self.labelDescription.text = [self predictImage:self.imageViewPhoto.image];
                 [self.indicatorView stopAnimating];
+                
+                // 認識結果を示す文字列（「コーギー」「柴犬」など）が更新されている
+                // NSLog(@"%@",self.labelDescription.text);
+                
             });
         });
     }];
+    
+    // async なので、ここに書いたとしても上記の処理のあとに実行されるとは限らない
+    // たとえば NSLogをここに書いた場合、認識されるまえの文字列が表示されてしまうことがある
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
