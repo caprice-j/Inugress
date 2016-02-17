@@ -25,6 +25,7 @@
 		74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F531C71C95C000479E5 /* DogTableViewController.swift */; };
 		74F86F571C71CDEA000479E5 /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */; };
 		74F86F581C71CDEA000479E5 /* DogTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */; };
+		74F86F5A1C74AE03000479E5 /* synset.jan.txt in Resources */ = {isa = PBXBuildFile; fileRef = 74F86F591C74AE03000479E5 /* synset.jan.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		74F86F531C71C95C000479E5 /* DogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogTableViewController.swift; sourceTree = "<group>"; };
 		74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogTableViewCell.swift; sourceTree = "<group>"; };
 		74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DogTableViewCell.xib; sourceTree = "<group>"; };
+		74F86F591C74AE03000479E5 /* synset.jan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = synset.jan.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 				472E1CE71C546868005E3FE0 /* LICENSE */,
 				472E1CDF1C546859005E3FE0 /* Inception_BN-0039.params */,
 				472E1CE01C546859005E3FE0 /* Inception_BN-symbol.json */,
+				74F86F591C74AE03000479E5 /* synset.jan.txt */,
 				472E1CEA1C5478A5005E3FE0 /* mean_224.bin */,
 				472E1CE21C546859005E3FE0 /* synset.txt */,
 			);
@@ -202,6 +205,7 @@
 				472E1CCE1C545B31005E3FE0 /* Assets.xcassets in Resources */,
 				472E1CE61C546859005E3FE0 /* synset.txt in Resources */,
 				472E1CED1C5484FA005E3FE0 /* LICENSE in Resources */,
+				74F86F5A1C74AE03000479E5 /* synset.jan.txt in Resources */,
 				472E1CCC1C545B31005E3FE0 /* Main.storyboard in Resources */,
 				472E1CE31C546859005E3FE0 /* Inception_BN-0039.params in Resources */,
 			);
