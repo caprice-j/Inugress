@@ -15,6 +15,7 @@ class DogTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        labelA.numberOfLines = 0
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

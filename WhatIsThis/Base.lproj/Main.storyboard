@@ -25,16 +25,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="TTE-7p-XJv">
-                                <rect key="frame" x="50" y="494" width="78" height="30"/>
+                                <rect key="frame" x="50" y="494" width="78" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86472877334322362" green="0.88179291152129247" blue="0.89115674083769636" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Save Photo"/>
                                 <connections>
                                     <action selector="saveSelectedImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="890-j5-16I"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fEo-C7-pyA">
-                                <rect key="frame" x="50" y="441" width="88" height="30"/>
+                                <rect key="frame" x="50" y="432" width="88" height="39"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.76387107575320101" green="0.89115674083769636" blue="0.66090369057025389" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Select Photo"/>
                                 <connections>
                                     <action selector="selectPhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kXf-9V-6R6"/>
@@ -62,8 +64,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YFi-JG-R39">
-                                <rect key="frame" x="50" y="505" width="77" height="136"/>
+                                <rect key="frame" x="50" y="562" width="77" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.64877669052384235" green="0.80335179483367414" blue="0.89115674083769636" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="capturePhotoButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ycr-pd-Zyj"/>
