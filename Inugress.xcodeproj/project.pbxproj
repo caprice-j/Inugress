@@ -21,6 +21,7 @@
 		472E1CE81C546868005E3FE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CE71C546868005E3FE0 /* LICENSE */; };
 		472E1CEB1C5478A5005E3FE0 /* mean_224.bin in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEA1C5478A5005E3FE0 /* mean_224.bin */; };
 		472E1CED1C5484FA005E3FE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEC1C5484FA005E3FE0 /* LICENSE */; };
+		6246D2A6A112251913EE731B /* libPods-Inugress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ACE90202785C061841A546 /* libPods-Inugress.a */; };
 		74F86F521C71C597000479E5 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F511C71C597000479E5 /* TopViewController.swift */; };
 		74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F531C71C95C000479E5 /* DogTableViewController.swift */; };
 		74F86F571C71CDEA000479E5 /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */; };
@@ -30,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		268F7A06EB5C33FF8D9BCAE7 /* Pods-Inugress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inugress.release.xcconfig"; path = "Pods/Target Support Files/Pods-Inugress/Pods-Inugress.release.xcconfig"; sourceTree = "<group>"; };
+		2CDFC81137215E6536643542 /* Pods-Inugress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inugress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Inugress/Pods-Inugress.debug.xcconfig"; sourceTree = "<group>"; };
 		472E1CBE1C545B31005E3FE0 /* Inugress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Inugress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		472E1CC21C545B31005E3FE0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		472E1CC41C545B31005E3FE0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +59,7 @@
 		74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DogTableViewCell.xib; sourceTree = "<group>"; };
 		74F86F591C74AE03000479E5 /* synset.jan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = synset.jan.txt; sourceTree = "<group>"; };
 		74F86F5B1C74BB76000479E5 /* synset.ej.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = synset.ej.txt; sourceTree = "<group>"; };
+		F2ACE90202785C061841A546 /* libPods-Inugress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Inugress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,18 +68,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				472E1CDD1C545B9A005E3FE0 /* Accelerate.framework in Frameworks */,
+				6246D2A6A112251913EE731B /* libPods-Inugress.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25BF9DA6A67C104A044BC602 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CDFC81137215E6536643542 /* Pods-Inugress.debug.xcconfig */,
+				268F7A06EB5C33FF8D9BCAE7 /* Pods-Inugress.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		472E1CB51C545B31005E3FE0 = {
 			isa = PBXGroup;
 			children = (
 				472E1CDC1C545B9A005E3FE0 /* Accelerate.framework */,
 				472E1CC01C545B31005E3FE0 /* WhatIsThis */,
 				472E1CBF1C545B31005E3FE0 /* Products */,
+				25BF9DA6A67C104A044BC602 /* Pods */,
+				DC1BAB5E29C5D9E3EF2330D7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -142,6 +158,14 @@
 			path = Inception;
 			sourceTree = "<group>";
 		};
+		DC1BAB5E29C5D9E3EF2330D7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2ACE90202785C061841A546 /* libPods-Inugress.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 472E1CD51C545B31005E3FE0 /* Build configuration list for PBXNativeTarget "Inugress" */;
 			buildPhases = (
+				AA0FC600BD4B796FE53F7707 /* Check Pods Manifest.lock */,
 				472E1CBA1C545B31005E3FE0 /* Sources */,
 				472E1CBB1C545B31005E3FE0 /* Frameworks */,
 				472E1CBC1C545B31005E3FE0 /* Resources */,
+				34744846CF313884DE1AD62E /* Embed Pods Frameworks */,
+				DDDCA7CA9504D62CF13AE1CD /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -216,6 +243,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34744846CF313884DE1AD62E /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inugress/Pods-Inugress-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA0FC600BD4B796FE53F7707 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DDDCA7CA9504D62CF13AE1CD /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Inugress/Pods-Inugress-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		472E1CBA1C545B31005E3FE0 /* Sources */ = {
@@ -336,6 +411,7 @@
 		};
 		472E1CD61C545B31005E3FE0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CDFC81137215E6536643542 /* Pods-Inugress.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -353,6 +429,7 @@
 		};
 		472E1CD71C545B31005E3FE0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 268F7A06EB5C33FF8D9BCAE7 /* Pods-Inugress.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
