@@ -56,7 +56,8 @@ class DogTableViewController: UITableViewController {
         
         let nowIndexPathDictionary : (AnyObject) = wordArray[indexPath.row]
         
-        cell.labelA.text = nowIndexPathDictionary[ "objname" ] as? String
+        // after using Inugress-Bridging-Header.h, I have to tell the compiler the type of nowIndexPathDictionary.
+        cell.labelA.text = (nowIndexPathDictionary as! NSDictionary)[ "objname" ] as? String
 //        cell.labelA.text = "testtest"
         
         return cell
