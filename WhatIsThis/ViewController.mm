@@ -245,7 +245,38 @@ RLM_ARRAY_TYPE(DogRecord)
     // ローカルデータベースであるRealmを呼び出す。CREATE DATABASEに相当する一行。
     DogRecord *mydog = [[DogRecord alloc] init];
     mydog.recognizedNameString = @"Rex";
-    mydog.pictureNSData = UIImagePNGRepresentation( self.imageViewPhoto.image );
+    
+    
+    
+    
+    // NSData には 16 MB までしか入らない。 シミュレータ内の画像で 11.3 MB ほど。
+    // 問題にそなえ、リサイズしておく
+    // FIXME: 16 MB 以下になるまでリサイズを繰り返す
+    
+    UIImage * image = self.imageViewPhoto.image;
+    
+    CGImageRef imageRef = [image CGImage];
+    size_t w = CGImageGetWidth(imageRef);
+    size_t h = CGImageGetHeight(imageRef);
+    size_t resize_w, resize_h;
+    
+    if (w>h) {
+        resize_w = 320; // FIXME
+        resize_h = h * resize_w / w;
+    } else {
+        resize_h = 480;
+        resize_w = w * resize_h / h;
+    }
+    
+    UIGraphicsBeginImageContext(CGSizeMake(resize_w, resize_h));
+    [image drawInRect:CGRectMake(0, 0, resize_w, resize_h)];
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    
+    NSLog( @" Image size is %d KB", (int) floor( UIImagePNGRepresentation( image ).length / 1000 ) );
+    
+    mydog.pictureNSData = UIImagePNGRepresentation( image );
      
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm transactionWithBlock:^{
