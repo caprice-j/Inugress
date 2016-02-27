@@ -8,6 +8,34 @@
 
 import UIKit
 
+
+// Execution Order
+//1) 起動したとき
+//
+//起動時（ ViewController が表示される）は以下の順
+//
+// ViewController viewDidLoad
+// ViewController viewWillAppear
+// ViewController viewDidAppear
+
+//2) Nextボタンをタップして遷移したとき
+// ViewController から NextViewController に遷移したとき
+//
+// NextViewController viewDidLoad
+// ViewController viewWillDisappear
+// NextViewController viewWillAppear
+// ViewController viewDidDisappear
+// NextViewController viewDidAppear
+
+//3) 戻ったとき
+//
+//　ナビゲーションバーの戻るで戻るとき。このときは ViewController のviewDidLoad はもうすでに呼ばれているため、呼ばれない
+//
+// NextViewController viewWillDisappear
+// ViewController viewWillAppear
+// NextViewController viewDidDisappear
+// ViewController viewDidAppear
+
 class DogTableViewController: UITableViewController {
 
     var wordArray: [AnyObject] = []
