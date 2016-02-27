@@ -36,6 +36,11 @@ import UIKit
 // NextViewController viewDidDisappear
 // ViewController viewDidAppear
 
+//class DogObject : RLMObject {
+//    
+//}
+
+
 class DogTableViewController: UITableViewController {
 
     var wordArray: [AnyObject] = []
@@ -66,6 +71,11 @@ class DogTableViewController: UITableViewController {
             print("no record")
         }
         tableView.reloadData()
+        
+//        let realm = try! Realm()
+//        DogRecord.allObjects()
+        let realm = RLMRealm.defaultRealm()
+
     }
     
     // specify the number of sections
