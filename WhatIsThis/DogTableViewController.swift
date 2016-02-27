@@ -42,8 +42,8 @@ import UIKit
 
 // ViewController.mm で保存した DogRecord 型に対応するものを作成
 //class DogRecord : RLMObject {
-//    dynamic var recognizedName = ""
-//    dynamic var picture: NSData? = nil
+//    dynamic var recognizedNameString = ""
+//    dynamic var pictureNSData: NSData? = nil
 //}
 
 class DogTableViewController: UITableViewController {
@@ -79,9 +79,9 @@ class DogTableViewController: UITableViewController {
         
 //        let realm = try! Realm()
 //        DogRecord.allObjects()
-//        let realm = RLMRealm.defaultRealm()
+        let realm = RLMRealm.defaultRealm()
         
-//        var dogObjects = DogRecord.allObjects()
+        var dogObjects = DogRecord.allObjects()
 
     }
     

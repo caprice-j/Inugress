@@ -9,13 +9,8 @@
 #import "ViewController.h"
 #import <Realm/Realm.h> // この一行がないと Realm 型が呼び出せない
 
-// See: https://realm.io/jp/docs/objc/latest/
-@interface DogRecord : RLMObject
-@property NSString * recognizedNameString;
-@property NSData * pictureNSData;
-@end
-RLM_ARRAY_TYPE(DogRecord)
-
+// @interface DogRecord は Swift でもこの DogRecord を使えるようにするために Inugress-Bridging-Header.h　へ移動した
+#import "Inugress-Bridging-Header.h"
 // この Implementation の2行がないと、 "_OBJC_CLASS_$_DogRecord", referenced from: というエラーになる
 @implementation DogRecord
 // 何も書かなくてよい
