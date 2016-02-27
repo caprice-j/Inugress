@@ -7,6 +7,19 @@
 //
 
 #import "ViewController.h"
+#import <Realm/Realm.h> // この一行がないと Realm 型が呼び出せない
+
+// See: https://realm.io/jp/docs/objc/latest/
+@interface DogRecord : RLMObject
+@property NSString * recognizedNameString;
+@property NSData * pictureNSData;
+@end
+RLM_ARRAY_TYPE(DogRecord)
+
+// この Implementation の2行がないと、 "_OBJC_CLASS_$_DogRecord", referenced from: というエラーになる
+@implementation DogRecord
+// 何も書かなくてよい
+@end
 
 @interface ViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -228,6 +241,17 @@
     [ud setObject:mutableArray forKey:@"KEY_S"];
     
     [ud synchronize];  // その変更を NSUserDefaults に即時反映させる（即時で無くてもよい場合は不要）
+    
+    // ローカルデータベースであるRealmを呼び出す。CREATE DATABASEに相当する一行。
+    DogRecord *mydog = [[DogRecord alloc] init];
+    mydog.recognizedNameString = @"Rex";
+    mydog.pictureNSData = UIImagePNGRepresentation( self.imageViewPhoto.image );
+     
+    RLMRealm *realm = [RLMRealm defaultRealm];
+    [realm transactionWithBlock:^{
+        [realm addObject:mydog];
+    }];
+    
     
     NSLog(@"Saved"); // デバッグ用。右下に Saved と表示させる。
     NSLog(self.labelDescription.text); // デバッグ用。右下に 保存した認識結果の文字列を表示する。

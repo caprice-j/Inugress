@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "381C9D2A8151DFF92A5FDE0F968B3666FB8BD7BA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "4C5E62F8C525DB5767824014A7A1C22340BB99CB" : 0,
+    "381C9D2A8151DFF92A5FDE0F968B3666FB8BD7BA" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B3EE29F9-B376-4752-8F31-8FC78595CA3E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "4C5E62F8C525DB5767824014A7A1C22340BB99CB" : "iPhoneApps\/",
+    "381C9D2A8151DFF92A5FDE0F968B3666FB8BD7BA" : "Inugress\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Inugress",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Inugress.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/caprice-j\/Inugress.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "381C9D2A8151DFF92A5FDE0F968B3666FB8BD7BA"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/caprice-j\/iPhoneApps.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "4C5E62F8C525DB5767824014A7A1C22340BB99CB"
+    }
+  ]
+}

@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A4998F82FC05D949BF591A72'
+               BlueprintIdentifier = '3C6CCA86C3DA21D9A6A3FB71'
                BlueprintName = 'Pods-Inugress'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libPods-Inugress.a'>
