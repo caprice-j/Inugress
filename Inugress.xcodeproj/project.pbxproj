@@ -22,6 +22,9 @@
 		472E1CEB1C5478A5005E3FE0 /* mean_224.bin in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEA1C5478A5005E3FE0 /* mean_224.bin */; };
 		472E1CED1C5484FA005E3FE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEC1C5484FA005E3FE0 /* LICENSE */; };
 		6246D2A6A112251913EE731B /* libPods-Inugress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ACE90202785C061841A546 /* libPods-Inugress.a */; };
+		747F09911C81438F002043B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F098E1C81438F002043B8 /* Default-568h@2x.png */; };
+		747F09921C81438F002043B8 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F098F1C81438F002043B8 /* Default-667h@2x.png */; };
+		747F09931C81438F002043B8 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F09901C81438F002043B8 /* Default-736h@3x.png */; };
 		74F86F521C71C597000479E5 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F511C71C597000479E5 /* TopViewController.swift */; };
 		74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F531C71C95C000479E5 /* DogTableViewController.swift */; };
 		74F86F571C71CDEA000479E5 /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */; };
@@ -52,6 +55,9 @@
 		472E1CE71C546868005E3FE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		472E1CEA1C5478A5005E3FE0 /* mean_224.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = mean_224.bin; sourceTree = "<group>"; };
 		472E1CEC1C5484FA005E3FE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		747F098E1C81438F002043B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		747F098F1C81438F002043B8 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
+		747F09901C81438F002043B8 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inugress-Bridging-Header.h"; sourceTree = "<group>"; };
 		74F86F511C71C597000479E5 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		74F86F531C71C95C000479E5 /* DogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogTableViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +117,7 @@
 				472E1CC41C545B31005E3FE0 /* AppDelegate.h */,
 				472E1CC51C545B31005E3FE0 /* AppDelegate.m */,
 				472E1CC71C545B31005E3FE0 /* ViewController.h */,
+				747F098D1C81438F002043B8 /* Defaults-master */,
 				472E1CC81C545B31005E3FE0 /* ViewController.mm */,
 				472E1CCA1C545B31005E3FE0 /* Main.storyboard */,
 				472E1CCD1C545B31005E3FE0 /* Assets.xcassets */,
@@ -156,6 +163,16 @@
 				472E1CE21C546859005E3FE0 /* synset.txt */,
 			);
 			path = Inception;
+			sourceTree = "<group>";
+		};
+		747F098D1C81438F002043B8 /* Defaults-master */ = {
+			isa = PBXGroup;
+			children = (
+				747F098E1C81438F002043B8 /* Default-568h@2x.png */,
+				747F098F1C81438F002043B8 /* Default-667h@2x.png */,
+				747F09901C81438F002043B8 /* Default-736h@3x.png */,
+			);
+			path = "Defaults-master";
 			sourceTree = "<group>";
 		};
 		DC1BAB5E29C5D9E3EF2330D7 /* Frameworks */ = {
@@ -229,6 +246,7 @@
 			files = (
 				472E1CD11C545B31005E3FE0 /* LaunchScreen.storyboard in Resources */,
 				472E1CE81C546868005E3FE0 /* LICENSE in Resources */,
+				747F09931C81438F002043B8 /* Default-736h@3x.png in Resources */,
 				74F86F5C1C74BB76000479E5 /* synset.ej.txt in Resources */,
 				472E1CE41C546859005E3FE0 /* Inception_BN-symbol.json in Resources */,
 				472E1CEB1C5478A5005E3FE0 /* mean_224.bin in Resources */,
@@ -236,6 +254,8 @@
 				472E1CCE1C545B31005E3FE0 /* Assets.xcassets in Resources */,
 				472E1CE61C546859005E3FE0 /* synset.txt in Resources */,
 				472E1CED1C5484FA005E3FE0 /* LICENSE in Resources */,
+				747F09921C81438F002043B8 /* Default-667h@2x.png in Resources */,
+				747F09911C81438F002043B8 /* Default-568h@2x.png in Resources */,
 				74F86F5A1C74AE03000479E5 /* synset.jan.txt in Resources */,
 				472E1CCC1C545B31005E3FE0 /* Main.storyboard in Resources */,
 				472E1CE31C546859005E3FE0 /* Inception_BN-0039.params in Resources */,

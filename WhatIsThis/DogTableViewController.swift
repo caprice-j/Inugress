@@ -68,6 +68,10 @@ class DogTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func goBackToTop () {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
 
     // MARK: - Table view data source
 
