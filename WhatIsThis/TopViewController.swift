@@ -22,6 +22,20 @@ class TopViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         clearAllNSDefaultsData()
+        
+        let realm = RLMRealm.defaultRealm()
+        // Can only add, remove, or create objects in a Realm in a write transaction - call beginWriteTransaction on an RLMRealm instance first.'
+        // を避けるために必要な beginWriteTransaction()
+        realm.beginWriteTransaction()
+        realm.deleteObjects(DogRecord.allObjects())
+
+//        realm.deleteAllObjects()
+   //      var error: NSError? = nil
+    //    try realm.commitWriteTransaction()
+//        if let path = realm.path as String? {
+//            print(path)
+//            try! NSFileManager().removeItemAtPath(path)
+//        }
     }
 
     override func didReceiveMemoryWarning() {

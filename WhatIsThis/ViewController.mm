@@ -271,6 +271,7 @@
     
     NSLog( @" Image size is %d KB", (int) floor( UIImagePNGRepresentation( image ).length / 1000 ) );
     
+    mydog.recognizedNameString = self.labelDescription.text;
     mydog.pictureNSData = UIImagePNGRepresentation( image );
      
     RLMRealm *realm = [RLMRealm defaultRealm];

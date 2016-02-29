@@ -11,6 +11,7 @@ import UIKit
 class DogTableViewCell: UITableViewCell {
 
     @IBOutlet var labelA: UILabel!
+    @IBOutlet var dogImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

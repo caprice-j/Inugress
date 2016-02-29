@@ -46,6 +46,8 @@ import UIKit
 //    dynamic var pictureNSData: NSData? = nil
 //}
 
+
+
 class DogTableViewController: UITableViewController {
 
     var wordArray: [AnyObject] = []
@@ -82,7 +84,14 @@ class DogTableViewController: UITableViewController {
         let realm = RLMRealm.defaultRealm()
         
         var dogObjects = DogRecord.allObjects()
-
+        if dogObjects.count > 0 {
+            
+            // 以下の for 文を使うためには、 RLMSupport.swift を github からDLする必要があった
+            // する前は 'RLMResults' does not have a member named 'Generator' 的なエラーが出ていた
+            for dogObject in dogObjects {
+                print("user.name: \( (dogObject as! DogRecord).recognizedNameString)")
+            }
+        }
     }
     
     // specify the number of sections
