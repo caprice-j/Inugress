@@ -28,6 +28,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewPhoto;
+@property (weak, nonatomic) IBOutlet UIImageView *baloonImageView;
+@property (weak, nonatomic) IBOutlet UILabel *baloonLabel;
+@property (weak, nonatomic) IBOutlet UILabel *baloonLabel2;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *dogProbabilityLabel;
 @property (weak, nonatomic) IBOutlet UILabel *allDescriptionLabel;

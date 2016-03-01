@@ -102,16 +102,36 @@
 
     NSLog([[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "]);
     NSLog(@"maxProbability: %f", outputs[max_idx] );
-
-    self.allDescriptionLabel.text = [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "];
-    self.allProbabilityLabel.text =
-    [ NSString stringWithFormat:@"%.2f", [self roundProbability: outputs[allMaxIdx] ] ];
-    self.dogProbabilityLabel.text =
-    [ NSString stringWithFormat:@"%.2f", [self roundProbability: outputs[max_idx]   ] ];
     
     
-    self.allPercentLabel.textColor = [UIColor blackColor];
+    // labelDescription は既に didFinishPickingMediaWithInfo 内部で変更されている
+    
+    float dogProbability = outputs[max_idx];
+    
+    if( dogProbability > 0.01 ){
+        
+        self.dogProbabilityLabel.text =
+        [ NSString stringWithFormat:@"%.2f", [self roundProbability: dogProbability   ] ];
+        
+    }else{
+        self.labelDescription.text = @"犬が写っている可能性は ... "; // FIXME : async の方が優先されてしまう
+        self.dogProbabilityLabel.text = @"たぶん 0";
+        self.allProbabilityLabel.text =
+        [ NSString stringWithFormat:@"%.2f", [self roundProbability: outputs[allMaxIdx] ] ];
+        self.allDescriptionLabel.text =
+        [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "];
+        
+        self.baloonImageView.image = [UIImage imageNamed: @"baloon.png"];
+        self.baloonLabel.textColor = [UIColor blackColor];
+        self.baloonLabel2.textColor = [UIColor blackColor];
+        
+        self.allPercentLabel.textColor = [UIColor blackColor];
+        
+    }
+    
     self.dogPercentLabel.textColor = [UIColor blackColor];
+    
+    
 
     
     return [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
@@ -123,7 +143,10 @@
 //    self.saveResultButton.backgroundColor = [MyColorClass backColor];
     
     self.dogPercentLabel.textColor = [UIColor whiteColor];
-    
+    self.baloonLabel.textColor = [UIColor whiteColor];
+    self.baloonLabel2.textColor = [UIColor whiteColor];
+    self.baloonImageView.image = nil;
+
     
     self.labelDescription.numberOfLines = 0;
     self.allDescriptionLabel.numberOfLines = 0;
