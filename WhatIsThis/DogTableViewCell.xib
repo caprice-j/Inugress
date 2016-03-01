@@ -22,7 +22,7 @@
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LabelA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09r-Vr-0V9">
                         <rect key="frame" x="102" y="0.0" width="218" height="75"/>
-                        <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="17"/>
+                        <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -47,6 +47,7 @@
             <connections>
                 <outlet property="dogImageView" destination="6w9-Yh-5aG" id="0XG-EZ-ZZm"/>
                 <outlet property="labelA" destination="09r-Vr-0V9" id="0J1-bS-EfX"/>
+                <outlet property="probLabel" destination="28e-AZ-fdk" id="Yzc-hy-cSe"/>
             </connections>
             <point key="canvasLocation" x="289" y="528.5"/>
         </tableViewCell>

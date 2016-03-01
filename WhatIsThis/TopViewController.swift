@@ -48,8 +48,25 @@ class TopViewController: UIViewController {
         initializeColor()
         
         clearAllNSDefaultsData()
+
+
+        let config = RLMRealmConfiguration.defaultConfiguration()
         
-//        let realm = RLMRealm.defaultRealm()
+        config.schemaVersion = 6;
+        
+        let migrationBlock: RLMMigrationBlock = { migration, oldSchemaVersion in
+            if oldSchemaVersion < 1 {
+                migration.enumerateObjects(DogRecord.className(), block: {
+                    oldObject, newObject in newObject!["isDog"] = true
+                })
+            }
+        }
+        
+        RLMRealmConfiguration.setDefaultConfiguration(config)
+        
+        let realm = RLMRealm.defaultRealm()
+        
+        print( realm.path )
         // Can only add, remove, or create objects in a Realm in a write transaction - call beginWriteTransaction on an RLMRealm instance first.'
         // を避けるために必要な beginWriteTransaction()
 //        realm.beginWriteTransaction()

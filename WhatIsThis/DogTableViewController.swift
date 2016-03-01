@@ -117,8 +117,15 @@ class DogTableViewController: UITableViewController {
         // after using Inugress-Bridging-Header.h, I have to tell the compiler the type of nowIndexPathDictionary.
         // cell.labelA.text = (nowIndexPathDictionary as! NSDictionary)[ "objname" ] as? String
         cell.labelA.text = nowIndexPathDictionary.recognizedNameString
+        cell.probLabel.text = nowIndexPathDictionary.percent
 //        cell.labelA.text = "testtest"
         cell.dogImageView.image = UIImage( data: nowIndexPathDictionary.pictureNSData )
+        
+        if(( nowIndexPathDictionary.isDog ) != nil){
+            cell.backgroundColor = MyColor.accentColor()
+        }else{
+            
+        }
         
         return cell
     }

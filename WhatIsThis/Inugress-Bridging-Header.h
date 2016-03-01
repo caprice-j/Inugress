@@ -8,6 +8,8 @@
 // See: https://realm.io/jp/docs/objc/latest/
 @interface DogRecord : RLMObject
 @property NSString * recognizedNameString;
+@property NSString * percent;
+@property BOOL isDog; // Boolean does not work for some reason ... too much waste of time
 @property NSData * pictureNSData;
 @end
 RLM_ARRAY_TYPE(DogRecord)

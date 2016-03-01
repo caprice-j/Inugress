@@ -25,10 +25,12 @@
 @implementation ViewController
 
 - (float)roundProbability:(float)rawProb {
-    float prob = rawProb * 10000;
+    float prob = rawProb * 1000;
 
-    return roundf(prob) / 100;
+    return roundf(prob) / 10;
 }
+
+NSString * noticeNSString = @"ではなく ... ";
 
 // 引数として渡された UIImage に写っている物体を認識し、その物体名を文字列で返す
 - (NSString *)predictImage:(UIImage *)image {
@@ -112,17 +114,25 @@
         
         self.dogProbabilityLabel.font =[self.dogPercentLabel.font fontWithSize:30];
         self.dogProbabilityLabel.text =
-        [ NSString stringWithFormat:@"%.2f", [self roundProbability: dogProbability   ] ];
+        [ NSString stringWithFormat:@"%.1f", [self roundProbability: dogProbability   ] ];
 
         self.dogPercentLabel.text = @"%";
+
+        self.allDescriptionLabel.text = @"";
+        self.allDescriptionLabel.backgroundColor = [MyColor backColor];
+        self.baloonImageView.image = nil;
+        self.baloonLabel.textColor = [MyColor backColor];
+        self.baloonLabel2.textColor = [MyColor backColor];
+        self.allPercentLabel.textColor = [MyColor backColor];
         
     }else{
         // self.labelDescription.text = @"犬が写っている可能性は ... "; // FIXME : async の方が優先されてしまう
         self.dogProbabilityLabel.font =[self.dogPercentLabel.font fontWithSize:15];
-        self.dogProbabilityLabel.text = @"ではなく ... ";
+        self.dogProbabilityLabel.text = noticeNSString;
         self.dogPercentLabel.text = @"";
         self.allProbabilityLabel.text =
-        [ NSString stringWithFormat:@"%.2f", [self roundProbability: outputs[allMaxIdx] ] ];
+        [ NSString stringWithFormat:@"%.1f", [self roundProbability: outputs[allMaxIdx] ] ];
+        self.allDescriptionLabel.backgroundColor = [UIColor whiteColor];
         self.allDescriptionLabel.text =
         [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "];
         
@@ -317,9 +327,17 @@
     
     NSLog( @" Image size is %d KB", (int) floor( UIImagePNGRepresentation( image ).length / 1000 ) );
     
-    mydog.recognizedNameString = self.labelDescription.text;
     mydog.pictureNSData = UIImagePNGRepresentation( image );
-     
+    if( [self.dogPercentLabel.text  isEqual: noticeNSString] ){
+        mydog.recognizedNameString = self.allDescriptionLabel.text;
+        mydog.percent = self.allPercentLabel.text;
+        mydog.isDog = false;
+    }else{
+        mydog.recognizedNameString = self.labelDescription.text;
+        mydog.percent = self.dogProbabilityLabel.text;
+        mydog.isDog = true;
+    }
+    
     RLMRealm *realm = [RLMRealm defaultRealm];
     [realm transactionWithBlock:^{
         [realm addObject:mydog];
