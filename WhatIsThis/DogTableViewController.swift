@@ -52,12 +52,15 @@ class DogTableViewController: UITableViewController {
 
     var wordArray: [AnyObject] = []
     let saveData = NSUserDefaults.standardUserDefaults()
-    
+    var dogObjects: RLMResults? = nil
     let savedKey: String = "KEY_S"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        // 以下の一行はviewWillAppear() だとエラる おそらく tableView.registerNib() の前に呼ぶ必要がある
+        dogObjects = DogRecord.allObjects()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -83,12 +86,11 @@ class DogTableViewController: UITableViewController {
 //        DogRecord.allObjects()
         let realm = RLMRealm.defaultRealm()
         
-        var dogObjects = DogRecord.allObjects()
-        if dogObjects.count > 0 {
+        if dogObjects!.count > 0 {
             
             // 以下の for 文を使うためには、 RLMSupport.swift を github からDLする必要があった
             // する前は 'RLMResults' does not have a member named 'Generator' 的なエラーが出ていた
-            for dogObject in dogObjects {
+            for dogObject in dogObjects! {
                 print("user.name: \( (dogObject as! DogRecord).recognizedNameString)")
             }
         }
@@ -101,18 +103,22 @@ class DogTableViewController: UITableViewController {
     
     // specify the number of cells
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return wordArray.count
+        // return wordArray.count
+        return Int( dogObjects!.count )
     }
     
     // specify how to display cell contents
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("dogCell", forIndexPath: indexPath) as! DogTableViewCell
         
-        let nowIndexPathDictionary : (AnyObject) = wordArray[indexPath.row]
+        // let nowIndexPathDictionary : (AnyObject) = wordArray[indexPath.row]
+        let nowIndexPathDictionary : (AnyObject) = dogObjects![ UInt( indexPath.row )]
         
         // after using Inugress-Bridging-Header.h, I have to tell the compiler the type of nowIndexPathDictionary.
-        cell.labelA.text = (nowIndexPathDictionary as! NSDictionary)[ "objname" ] as? String
+        // cell.labelA.text = (nowIndexPathDictionary as! NSDictionary)[ "objname" ] as? String
+        cell.labelA.text = nowIndexPathDictionary.recognizedNameString
 //        cell.labelA.text = "testtest"
+        cell.dogImageView.image = UIImage( data: nowIndexPathDictionary.pictureNSData )
         
         return cell
     }
