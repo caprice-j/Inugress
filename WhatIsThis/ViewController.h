@@ -26,6 +26,9 @@
     UIImage *meanImage;
 }
 
+@property (weak, nonatomic) IBOutlet UILabel *borderLabel;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *labelDescription;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewPhoto;
 @property (weak, nonatomic) IBOutlet UIImageView *baloonImageView;
