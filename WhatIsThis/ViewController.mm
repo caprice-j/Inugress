@@ -315,4 +315,8 @@
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)goBackToTop:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 @end

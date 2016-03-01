@@ -9,7 +9,14 @@
 import UIKit
 
 class TopViewController: UIViewController {
+    
+    @IBOutlet var takePhotoButton: UIButton!
+    @IBOutlet var showAlbumButton: UIButton!
 
+    @IBOutlet var takePhotoIcon: UILabel!
+    @IBOutlet var showAlbumIcon: UILabel!
+
+    
     // NSDefaultsをすべて消したいとき
     func clearAllNSDefaultsData () {
         
@@ -17,17 +24,36 @@ class TopViewController: UIViewController {
         NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain)
     }
     
+    // viewDidLoad 内で呼ばれる
+    func initializeColor() {
+        
+        self.view.backgroundColor = MyColorClass.backColor
+        takePhotoButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        takePhotoButton.backgroundColor = MyColorClass.textColor
+        
+        takePhotoIcon.textColor = UIColor.whiteColor()
+
+        showAlbumButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+        showAlbumButton.backgroundColor = MyColorClass.textColor
+        
+        showAlbumIcon.textColor = UIColor.whiteColor()
+        
+
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        initializeColor()
         
         clearAllNSDefaultsData()
         
-        let realm = RLMRealm.defaultRealm()
+//        let realm = RLMRealm.defaultRealm()
         // Can only add, remove, or create objects in a Realm in a write transaction - call beginWriteTransaction on an RLMRealm instance first.'
         // を避けるために必要な beginWriteTransaction()
-        realm.beginWriteTransaction()
-        realm.deleteObjects(DogRecord.allObjects())
+//        realm.beginWriteTransaction()
+//        realm.deleteObjects(DogRecord.allObjects())
 
 //        realm.deleteAllObjects()
    //      var error: NSError? = nil

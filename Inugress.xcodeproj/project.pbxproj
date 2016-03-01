@@ -48,6 +48,13 @@
 		747F09F01C84A834002043B8 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F09DA1C84A834002043B8 /* Icon@2x.png */; };
 		747F09F11C84A834002043B8 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F09DB1C84A834002043B8 /* iTunesArtwork.png */; };
 		747F09F21C84A834002043B8 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F09DC1C84A834002043B8 /* iTunesArtwork@2x.png */; };
+		74BE36071C85285000E76FB7 /* Ricty-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74BE36031C85285000E76FB7 /* Ricty-Bold.ttf */; };
+		74BE36081C85285000E76FB7 /* Ricty-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74BE36041C85285000E76FB7 /* Ricty-Regular.ttf */; };
+		74BE36091C85285000E76FB7 /* RictyDiscord-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74BE36051C85285000E76FB7 /* RictyDiscord-Bold.ttf */; };
+		74BE360A1C85285000E76FB7 /* RictyDiscord-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 74BE36061C85285000E76FB7 /* RictyDiscord-Regular.ttf */; };
+		74BE360C1C85295C00E76FB7 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 74BE360B1C85295C00E76FB7 /* FontAwesome.otf */; };
+		74F1C0251C858FAC0062E155 /* stamp.ai in Resources */ = {isa = PBXBuildFile; fileRef = 74F1C0231C858FAC0062E155 /* stamp.ai */; };
+		74F1C0261C858FAC0062E155 /* stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 74F1C0241C858FAC0062E155 /* stamp.png */; };
 		74F86F521C71C597000479E5 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F511C71C597000479E5 /* TopViewController.swift */; };
 		74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F531C71C95C000479E5 /* DogTableViewController.swift */; };
 		74F86F571C71CDEA000479E5 /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */; };
@@ -104,6 +111,13 @@
 		747F09DA1C84A834002043B8 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		747F09DB1C84A834002043B8 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
 		747F09DC1C84A834002043B8 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		74BE36031C85285000E76FB7 /* Ricty-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ricty-Bold.ttf"; sourceTree = "<group>"; };
+		74BE36041C85285000E76FB7 /* Ricty-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Ricty-Regular.ttf"; sourceTree = "<group>"; };
+		74BE36051C85285000E76FB7 /* RictyDiscord-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RictyDiscord-Bold.ttf"; sourceTree = "<group>"; };
+		74BE36061C85285000E76FB7 /* RictyDiscord-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RictyDiscord-Regular.ttf"; sourceTree = "<group>"; };
+		74BE360B1C85295C00E76FB7 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
+		74F1C0231C858FAC0062E155 /* stamp.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stamp.ai; sourceTree = "<group>"; };
+		74F1C0241C858FAC0062E155 /* stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp.png; sourceTree = "<group>"; };
 		74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inugress-Bridging-Header.h"; sourceTree = "<group>"; };
 		74F86F511C71C597000479E5 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		74F86F531C71C95C000479E5 /* DogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogTableViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +172,8 @@
 		472E1CC01C545B31005E3FE0 /* WhatIsThis */ = {
 			isa = PBXGroup;
 			children = (
+				74F1C0221C858FAC0062E155 /* img */,
+				74BE36021C85285000E76FB7 /* font */,
 				747F09C61C84A834002043B8 /* ios */,
 				472E1CDE1C546859005E3FE0 /* Inception */,
 				472E1CD81C545B4E005E3FE0 /* MXNet */,
@@ -172,12 +188,12 @@
 				472E1CD21C545B31005E3FE0 /* Info.plist */,
 				472E1CC11C545B31005E3FE0 /* Supporting Files */,
 				74F86F511C71C597000479E5 /* TopViewController.swift */,
-				74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */,
 				74F86F531C71C95C000479E5 /* DogTableViewController.swift */,
 				747F09C41C818C84002043B8 /* RLMSupport.swift */,
 				74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */,
 				74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */,
 				747F09C21C8185D1002043B8 /* MyColorClass.swift */,
+				74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */,
 			);
 			path = WhatIsThis;
 			sourceTree = "<group>";
@@ -260,6 +276,28 @@
 			path = AppIcon.appiconset;
 			sourceTree = "<group>";
 		};
+		74BE36021C85285000E76FB7 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				74BE36031C85285000E76FB7 /* Ricty-Bold.ttf */,
+				74BE36041C85285000E76FB7 /* Ricty-Regular.ttf */,
+				74BE36051C85285000E76FB7 /* RictyDiscord-Bold.ttf */,
+				74BE36061C85285000E76FB7 /* RictyDiscord-Regular.ttf */,
+				74BE360B1C85295C00E76FB7 /* FontAwesome.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
+		74F1C0221C858FAC0062E155 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				74F1C0231C858FAC0062E155 /* stamp.ai */,
+				74F1C0241C858FAC0062E155 /* stamp.png */,
+			);
+			name = img;
+			path = ios/img;
+			sourceTree = "<group>";
+		};
 		DC1BAB5E29C5D9E3EF2330D7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -338,9 +376,14 @@
 				747F09E01C84A834002043B8 /* Icon-40@2x.png in Resources */,
 				747F09E81C84A834002043B8 /* Icon-Small@2x.png in Resources */,
 				747F09931C81438F002043B8 /* Default-736h@3x.png in Resources */,
+				74BE36071C85285000E76FB7 /* Ricty-Bold.ttf in Resources */,
 				747F09DE1C84A834002043B8 /* Contents.json in Resources */,
 				74F86F5C1C74BB76000479E5 /* synset.ej.txt in Resources */,
+				74BE360C1C85295C00E76FB7 /* FontAwesome.otf in Resources */,
+				74BE36091C85285000E76FB7 /* RictyDiscord-Bold.ttf in Resources */,
+				74F1C0261C858FAC0062E155 /* stamp.png in Resources */,
 				472E1CE41C546859005E3FE0 /* Inception_BN-symbol.json in Resources */,
+				74BE360A1C85285000E76FB7 /* RictyDiscord-Regular.ttf in Resources */,
 				472E1CEB1C5478A5005E3FE0 /* mean_224.bin in Resources */,
 				74F86F581C71CDEA000479E5 /* DogTableViewCell.xib in Resources */,
 				747F09F01C84A834002043B8 /* Icon@2x.png in Resources */,
@@ -360,7 +403,9 @@
 				472E1CCC1C545B31005E3FE0 /* Main.storyboard in Resources */,
 				747F09E31C84A834002043B8 /* Icon-60@3x.png in Resources */,
 				472E1CE31C546859005E3FE0 /* Inception_BN-0039.params in Resources */,
+				74F1C0251C858FAC0062E155 /* stamp.ai in Resources */,
 				747F09F21C84A834002043B8 /* iTunesArtwork@2x.png in Resources */,
+				74BE36081C85285000E76FB7 /* Ricty-Regular.ttf in Resources */,
 				747F09ED1C84A834002043B8 /* Icon-Small-50.png in Resources */,
 				747F09EF1C84A834002043B8 /* Icon.png in Resources */,
 				747F09EA1C84A834002043B8 /* Icon-60.png in Resources */,

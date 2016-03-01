@@ -33,5 +33,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *allDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *allProbabilityLabel;
 
+- (IBAction)goBackToTop:(id)sender;
+
 @end
 
