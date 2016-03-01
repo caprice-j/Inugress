@@ -33,6 +33,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *allDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *allProbabilityLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *allPercentLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dogPercentLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *goBackToTopButton;
+@property (weak, nonatomic) IBOutlet UIButton *takePhotoButton;
+@property (weak, nonatomic) IBOutlet UIButton *selectPhotoButton;
+@property (weak, nonatomic) IBOutlet UIButton *saveResultButton;
+
+
 - (IBAction)goBackToTop:(id)sender;
 
 @end

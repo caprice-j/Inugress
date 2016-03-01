@@ -24,6 +24,12 @@
 
 @implementation ViewController
 
+- (float)roundProbability:(float)rawProb {
+    float prob = rawProb * 10000;
+
+    return roundf(prob) / 100;
+}
+
 // 引数として渡された UIImage に写っている物体を認識し、その物体名を文字列で返す
 - (NSString *)predictImage:(UIImage *)image {
 
@@ -98,13 +104,26 @@
     NSLog(@"maxProbability: %f", outputs[max_idx] );
 
     self.allDescriptionLabel.text = [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "];
-    self.allProbabilityLabel.text = [ NSString stringWithFormat:@"%f", outputs[allMaxIdx] ];
-    self.dogProbabilityLabel.text = [ NSString stringWithFormat:@"%f", outputs[max_idx] ];
+    self.allProbabilityLabel.text =
+    [ NSString stringWithFormat:@"%.2f", [self roundProbability: outputs[allMaxIdx] ] ];
+    self.dogProbabilityLabel.text =
+    [ NSString stringWithFormat:@"%.2f", [self roundProbability: outputs[max_idx]   ] ];
+    
+    
+    self.allPercentLabel.textColor = [UIColor blackColor];
+    self.dogPercentLabel.textColor = [UIColor blackColor];
+
     
     return [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
 }
 
 - (void)viewDidLoad {
+    
+    self.allPercentLabel.textColor = [UIColor whiteColor];
+//    self.saveResultButton.backgroundColor = [MyColorClass backColor];
+    
+    self.dogPercentLabel.textColor = [UIColor whiteColor];
+    
     
     self.labelDescription.numberOfLines = 0;
     self.allDescriptionLabel.numberOfLines = 0;
