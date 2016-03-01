@@ -110,26 +110,30 @@
     
     if( dogProbability > 0.01 ){
         
+        self.dogProbabilityLabel.font =[self.dogPercentLabel.font fontWithSize:30];
         self.dogProbabilityLabel.text =
         [ NSString stringWithFormat:@"%.2f", [self roundProbability: dogProbability   ] ];
+
+        self.dogPercentLabel.text = @"%";
         
     }else{
-        self.labelDescription.text = @"犬が写っている可能性は ... "; // FIXME : async の方が優先されてしまう
-        self.dogProbabilityLabel.text = @"たぶん 0";
+        // self.labelDescription.text = @"犬が写っている可能性は ... "; // FIXME : async の方が優先されてしまう
+        self.dogProbabilityLabel.font =[self.dogPercentLabel.font fontWithSize:15];
+        self.dogProbabilityLabel.text = @"ではなく ... ";
+        self.dogPercentLabel.text = @"";
         self.allProbabilityLabel.text =
         [ NSString stringWithFormat:@"%.2f", [self roundProbability: outputs[allMaxIdx] ] ];
         self.allDescriptionLabel.text =
         [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "];
         
         self.baloonImageView.image = [UIImage imageNamed: @"baloon.png"];
-        self.baloonLabel.textColor = [UIColor blackColor];
-        self.baloonLabel2.textColor = [UIColor blackColor];
-        
-        self.allPercentLabel.textColor = [UIColor blackColor];
+        self.baloonLabel.textColor = [MyColor textColor];
+        self.baloonLabel2.textColor = [MyColor textColor];
+        self.allPercentLabel.textColor = [MyColor textColor];
         
     }
     
-    self.dogPercentLabel.textColor = [UIColor blackColor];
+    self.dogPercentLabel.textColor = [MyColor textColor];
     
     
 
@@ -139,12 +143,12 @@
 
 - (void)viewDidLoad {
     
-    self.allPercentLabel.textColor = [UIColor whiteColor];
 //    self.saveResultButton.backgroundColor = [MyColorClass backColor];
     
-    self.dogPercentLabel.textColor = [UIColor whiteColor];
-    self.baloonLabel.textColor = [UIColor whiteColor];
-    self.baloonLabel2.textColor = [UIColor whiteColor];
+    self.allPercentLabel.textColor = [MyColor backColor];
+    self.dogPercentLabel.textColor = [MyColor backColor];
+    self.baloonLabel.textColor     = [MyColor backColor];
+    self.baloonLabel2.textColor    = [MyColor backColor];
     self.baloonImageView.image = nil;
 
     

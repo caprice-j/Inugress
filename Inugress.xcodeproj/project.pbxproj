@@ -56,6 +56,7 @@
 		74F1C0251C858FAC0062E155 /* stamp.ai in Resources */ = {isa = PBXBuildFile; fileRef = 74F1C0231C858FAC0062E155 /* stamp.ai */; };
 		74F1C0261C858FAC0062E155 /* stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 74F1C0241C858FAC0062E155 /* stamp.png */; };
 		74F1C0281C85D69B0062E155 /* baloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 74F1C0271C85D69B0062E155 /* baloon.png */; };
+		74F1C02E1C85DFDC0062E155 /* NSObject+MyColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 74F1C02D1C85DFDC0062E155 /* NSObject+MyColor.m */; };
 		74F86F521C71C597000479E5 /* TopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F511C71C597000479E5 /* TopViewController.swift */; };
 		74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F531C71C95C000479E5 /* DogTableViewController.swift */; };
 		74F86F571C71CDEA000479E5 /* DogTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */; };
@@ -120,6 +121,7 @@
 		74F1C0231C858FAC0062E155 /* stamp.ai */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = stamp.ai; sourceTree = "<group>"; };
 		74F1C0241C858FAC0062E155 /* stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp.png; sourceTree = "<group>"; };
 		74F1C0271C85D69B0062E155 /* baloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = baloon.png; sourceTree = "<group>"; };
+		74F1C02D1C85DFDC0062E155 /* NSObject+MyColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+MyColor.m"; sourceTree = "<group>"; };
 		74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Inugress-Bridging-Header.h"; sourceTree = "<group>"; };
 		74F86F511C71C597000479E5 /* TopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopViewController.swift; sourceTree = "<group>"; };
 		74F86F531C71C95C000479E5 /* DogTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DogTableViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 				74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */,
 				747F09C21C8185D1002043B8 /* MyColorClass.swift */,
 				74F86F501C71C597000479E5 /* Inugress-Bridging-Header.h */,
+				74F1C02D1C85DFDC0062E155 /* NSObject+MyColor.m */,
 			);
 			path = WhatIsThis;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				747F09C31C8185D1002043B8 /* MyColorClass.swift in Sources */,
 				747F09C51C818C84002043B8 /* RLMSupport.swift in Sources */,
 				74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */,
+				74F1C02E1C85DFDC0062E155 /* NSObject+MyColor.m in Sources */,
 				472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.cc in Sources */,
 				74F86F571C71CDEA000479E5 /* DogTableViewCell.swift in Sources */,
 				472E1CC91C545B31005E3FE0 /* ViewController.mm in Sources */,

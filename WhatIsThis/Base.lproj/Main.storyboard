@@ -112,7 +112,8 @@
                                 <rect key="frame" x="-49" y="20" width="189" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.27843137254901962" green="0.24705882352941178" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="            タイトルに戻る">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="16"/>
+                                <state key="normal" title="           Back to Title">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -199,7 +200,7 @@
             </objects>
             <point key="canvasLocation" x="164" y="-423"/>
         </scene>
-        <!--図鑑-->
+        <!--ALBUM-->
         <scene sceneID="HSZ-PG-vn8">
             <objects>
                 <tableViewController id="15q-Qd-Kih" customClass="DogTableViewController" customModule="Inugress" customModuleProvider="target" sceneMemberID="viewController">
@@ -223,8 +224,8 @@
                             <outlet property="delegate" destination="15q-Qd-Kih" id="rX1-nB-Zts"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="図鑑" id="St6-r1-PVU">
-                        <barButtonItem key="leftBarButtonItem" title="タイトルに戻る" id="vdI-vf-O4O">
+                    <navigationItem key="navigationItem" title="ALBUM" id="St6-r1-PVU">
+                        <barButtonItem key="leftBarButtonItem" title="Back to Title" id="vdI-vf-O4O">
                             <connections>
                                 <action selector="goBackToTop" destination="15q-Qd-Kih" id="wfj-ry-0M4"/>
                             </connections>

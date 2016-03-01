@@ -4,6 +4,12 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Ricty-Bold.ttf">
+            <string>Ricty-Bold</string>
+            <string>Ricty-Bold</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -15,20 +21,26 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LabelA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09r-Vr-0V9">
-                        <rect key="frame" x="102" y="0.0" width="218" height="110"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="102" y="0.0" width="218" height="75"/>
+                        <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="[ 画像 ]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKe-XX-XlO">
-                        <rect key="frame" x="257" y="89" width="55" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28e-AZ-fdk">
+                        <rect key="frame" x="213" y="69" width="78" height="41"/>
+                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="33"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6w9-Yh-5aG">
                         <rect key="frame" x="0.0" y="-1" width="87" height="111"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKe-XX-XlO">
+                        <rect key="frame" x="299" y="85" width="21" height="25"/>
+                        <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="21"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" red="1" green="0.95294117649999999" blue="0.89019607840000003" alpha="1" colorSpace="calibratedRGB"/>
             </tableViewCellContentView>
@@ -36,7 +48,7 @@
                 <outlet property="dogImageView" destination="6w9-Yh-5aG" id="0XG-EZ-ZZm"/>
                 <outlet property="labelA" destination="09r-Vr-0V9" id="0J1-bS-EfX"/>
             </connections>
-            <point key="canvasLocation" x="352" y="533.5"/>
+            <point key="canvasLocation" x="289" y="528.5"/>
         </tableViewCell>
     </objects>
 </document>

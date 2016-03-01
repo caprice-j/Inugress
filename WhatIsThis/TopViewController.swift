@@ -27,14 +27,14 @@ class TopViewController: UIViewController {
     // viewDidLoad 内で呼ばれる
     func initializeColor() {
         
-        self.view.backgroundColor = MyColorClass.backColor
+        self.view.backgroundColor = MyColor.backColor()
         takePhotoButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        takePhotoButton.backgroundColor = MyColorClass.textColor
+        takePhotoButton.backgroundColor = MyColor.textColor()
         
         takePhotoIcon.textColor = UIColor.whiteColor()
 
         showAlbumButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-        showAlbumButton.backgroundColor = MyColorClass.textColor
+        showAlbumButton.backgroundColor = MyColor.textColor()
         
         showAlbumIcon.textColor = UIColor.whiteColor()
         
