@@ -24,6 +24,7 @@
     NSMutableArray *model_synset;
     float model_mean[kDefaultImageSize];
     UIImage *meanImage;
+    UIImage *previousSavedImage;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *borderLabel;
@@ -48,7 +49,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectPhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveResultButton;
 
-
+- (void)otherButtonPushed;
 - (IBAction)goBackToTop:(id)sender;
 
 @end

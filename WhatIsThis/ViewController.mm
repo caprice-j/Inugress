@@ -11,6 +11,7 @@
 
 // @interface DogRecord は Swift でもこの DogRecord を使えるようにするために Inugress-Bridging-Header.h　へ移動した
 #import "Inugress-Bridging-Header.h"
+#import <QuartzCore/QuartzCore.h> // UIImageView の枠線などを付けるため
 // この Implementation の2行がないと、 "_OBJC_CLASS_$_DogRecord", referenced from: というエラーになる
 @implementation DogRecord
 // 何も書かなくてよい
@@ -113,7 +114,7 @@ NSString * noticeNSString = @"ではなく ... ";
     if( dogProbability > 0.01 ){
         // 犬であると判定した
         
-        self.dogProbabilityLabel.font =[self.dogPercentLabel.font fontWithSize:30];
+        self.dogProbabilityLabel.font =[self.dogProbabilityLabel.font fontWithSize:45];
         self.dogProbabilityLabel.text =
         [ NSString stringWithFormat:@"%.1f", [self roundProbability: dogProbability   ] ];
 
@@ -128,7 +129,7 @@ NSString * noticeNSString = @"ではなく ... ";
         
     }else{
         // self.labelDescription.text = @"犬が写っている可能性は ... "; // FIXME : async の方が優先されてしまう
-        self.dogProbabilityLabel.font =[self.dogPercentLabel.font fontWithSize:15];
+        self.dogProbabilityLabel.font =[self.dogProbabilityLabel.font fontWithSize:15];
         self.dogProbabilityLabel.text = noticeNSString;
         self.dogPercentLabel.text = @"";
         self.allProbabilityLabel.text =
@@ -151,6 +152,10 @@ NSString * noticeNSString = @"ではなく ... ";
 
 - (void)viewDidLoad {
     
+    self.imageViewPhoto.layer.borderWidth = 3.0f;
+    self.imageViewPhoto.layer.cornerRadius = 10.0f;
+    self.imageViewPhoto.layer.masksToBounds = true;
+    self.imageViewPhoto.layer.borderColor = [MyColor textColor].CGColor;
     
     self.borderLabel.layer.borderColor = [MyColor textColor].CGColor;
     self.borderLabel.layer.borderWidth = 3.0;
@@ -271,6 +276,36 @@ NSString * noticeNSString = @"ではなく ... ";
 // メイン画面で "Save Photo" ボタンを押したときに呼ばれる関数。
 // 認識された結果である犬の情報を、NSUserDefaults に保存する。
 - (IBAction)saveSelectedImage:(id)sender {
+    
+    NSString * alertNSString = @"";
+    if( self.imageViewPhoto.image == meanImage ){
+       alertNSString = @"Please specify your image first.";
+    }
+    
+    if( self.imageViewPhoto.image == previousSavedImage ){
+       alertNSString = @"Already saved.";
+    }
+    
+    if( self.imageViewPhoto.image == meanImage or
+        self.imageViewPhoto.image == previousSavedImage ){
+        
+        // アラートを出す
+        UIAlertController *alertController =
+        [UIAlertController alertControllerWithTitle:@"Not Saved"
+                                            message: alertNSString
+                                     preferredStyle:UIAlertControllerStyleAlert];
+        
+        // addActionした順に左から右にボタンが配置される
+        [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            // otherボタンが押された時の処理
+            [self otherButtonPushed];
+        }]];
+        [self presentViewController:alertController animated:YES completion:nil];
+        
+        return ;
+
+    }
+    
     NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];  // 取得
     
 //    [ud setInteger:100 forKey:@"KEY_I"];  // int型の100をKEY_Iというキーで保存
@@ -309,6 +344,7 @@ NSString * noticeNSString = @"ではなく ... ";
     // FIXME: 16 MB 以下になるまでリサイズを繰り返す
     
     UIImage * image = self.imageViewPhoto.image;
+    previousSavedImage = image; // 重複保存をさけるための条件分岐に使う
     
     CGImageRef imageRef = [image CGImage];
     size_t w = CGImageGetWidth(imageRef);
@@ -351,6 +387,24 @@ NSString * noticeNSString = @"ではなく ... ";
     NSLog(@"Saved"); // デバッグ用。右下に Saved と表示させる。
     NSLog(self.labelDescription.text); // デバッグ用。右下に 保存した認識結果の文字列を表示する。
     
+    
+    // アラートを出す
+    UIAlertController *alertController =
+      [UIAlertController alertControllerWithTitle:@"Completed"
+                                          message:@"Saved to your album."
+                                   preferredStyle:UIAlertControllerStyleAlert];
+    
+    // addActionした順に左から右にボタンが配置される
+    [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        // otherボタンが押された時の処理
+        [self otherButtonPushed];
+    }]];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
+- (void)otherButtonPushed {
+
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -384,6 +438,9 @@ NSString * noticeNSString = @"ではなく ... ";
 }
 
 - (IBAction)goBackToTop:(id)sender{
+    // この一行がないと、次にTakePhotoの画面に来たときに、解放済みの読み込んだ画像にアクセスして BAD_ACCESS エラーが出る
+    self.imageViewPhoto.image = meanImage;
+
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 

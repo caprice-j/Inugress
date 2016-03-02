@@ -55,11 +55,50 @@ class DogTableViewController: UITableViewController {
     var dogObjects: RLMResults? = nil
     let savedKey: String = "KEY_S"
     
+    
+    func cropThumbnailImage(image :UIImage, w:Int, h:Int) ->UIImage
+    {
+        // リサイズする
+        let origRef    = image.CGImage;
+        let origWidth  = Int(CGImageGetWidth(origRef))
+        let origHeight = Int(CGImageGetHeight(origRef))
+        var resizeWidth:Int = 0, resizeHeight:Int = 0
+        
+        if (origWidth < origHeight) {
+            resizeWidth = w
+            resizeHeight = origHeight * resizeWidth / origWidth
+        } else {
+            resizeHeight = h
+            resizeWidth = origWidth * resizeHeight / origHeight
+        }
+        
+        let resizeSize = CGSizeMake(CGFloat(resizeWidth), CGFloat(resizeHeight))
+        UIGraphicsBeginImageContext(resizeSize)
+        
+        image.drawInRect(CGRectMake(0, 0, CGFloat(resizeWidth), CGFloat(resizeHeight)))
+        
+        let resizeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        // 切り抜き処理
+        
+        let cropRect  = CGRectMake(
+            CGFloat((resizeWidth - w) / 2),
+            CGFloat((resizeHeight - h) / 2),
+            CGFloat(w), CGFloat(h))
+        let cropRef   = CGImageCreateWithImageInRect(resizeImage.CGImage, cropRect)
+        let cropImage = UIImage(CGImage: cropRef!)
+        
+        return cropImage
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // 以下の一行はviewWillAppear() だとエラる おそらく tableView.registerNib() の前に呼ぶ必要がある
         dogObjects = DogRecord.allObjects()
+        
+        // self.view.frame.width
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -119,7 +158,8 @@ class DogTableViewController: UITableViewController {
         cell.labelA.text = nowIndexPathDictionary.recognizedNameString
         cell.probLabel.text = nowIndexPathDictionary.percent
 //        cell.labelA.text = "testtest"
-        cell.dogImageView.image = UIImage( data: nowIndexPathDictionary.pictureNSData )
+        let image = UIImage( data: nowIndexPathDictionary.pictureNSData )
+        cell.dogImageView.image = cropThumbnailImage(image!, w: 174, h: 220)
         
         if(( nowIndexPathDictionary.isDog ) != nil){
             cell.backgroundColor = MyColor.accentColor()
