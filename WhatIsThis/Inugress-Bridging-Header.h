@@ -21,4 +21,5 @@ RLM_ARRAY_TYPE(DogRecord)
 + (UIColor *) backColor;
 + (UIColor *) textColor;
 + (UIColor *) accentColor;
++ (unsigned long) inceptionOffset;
 @end

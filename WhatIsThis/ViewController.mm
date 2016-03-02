@@ -130,6 +130,9 @@ NSString * noticeNSString = @"ではなく ... ";
         self.baloonLabel2.text = @"";
         self.allPercentLabel.text = @"";
         
+        self.inceptionIndexPrefixLabel.text = @"No.";
+        self.inceptionIndexLabel.text = [NSString stringWithFormat:@"%lu", (max_idx - [MyColor inceptionOffset] )];
+
     }else{
         // 犬以外であると判定した
         self.dogPercentLabel.text = @"%";
@@ -150,6 +153,8 @@ NSString * noticeNSString = @"ではなく ... ";
           [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "]; // "バインダー" などの物体名
         self.baloonLabel2.text = @"かも？";
         // self.allPercentLabel.text = @"%";
+        self.inceptionIndexPrefixLabel.text = @"No.";
+        self.inceptionIndexLabel.text = @" --";
         
     }
     
@@ -181,6 +186,9 @@ NSString * noticeNSString = @"ではなく ... ";
     self.baloonLabel2.text        = @"";
     self.dogPercentLabel.text     = @"";
     self.baloonImageView.image = nil;
+    
+    self.inceptionIndexLabel.text = @"";
+    self.inceptionIndexPrefixLabel.text = @"";
 
     
     self.labelDescription.numberOfLines = 0;
@@ -404,7 +412,7 @@ NSString * noticeNSString = @"ではなく ... ";
         mydog.percent = self.dogProbabilityLabel.text;
         mydog.isDog = true;
         mydog.createdAt = [self currentTimeInNSString];
-        mydog.inceptionIndex = max_idx;
+        mydog.inceptionIndex = max_idx - [MyColor inceptionOffset]; // チワワが1のはず
     }
     
     RLMRealm *realm = [RLMRealm defaultRealm];

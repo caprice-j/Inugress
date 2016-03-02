@@ -15,6 +15,16 @@ class TopViewController: UIViewController {
 
     @IBOutlet var takePhotoIcon: UILabel!
     @IBOutlet var showAlbumIcon: UILabel!
+    
+    @IBOutlet var currentDogBreedNumberLabel: UILabel!
+
+    @IBOutlet var dogBreedPrefixLabel: UILabel!
+    @IBOutlet var dogBreedSlashLabel: UILabel!
+    @IBOutlet var dogBreedMaximumLabel: UILabel!
+    @IBOutlet var dogBreedSuffixLabel: UILabel!
+    
+    
+    var dogObjects: RLMResults? = nil
 
     
     // NSDefaultsをすべて消したいとき
@@ -92,9 +102,12 @@ class TopViewController: UIViewController {
         RLMRealmConfiguration.setDefaultConfiguration(config)
         RLMRealm.migrateRealm(config)
 
-        let realm = RLMRealm.defaultRealm()
         
-         print( "realm path is : " + realm.path )
+        
+        
+        
+        
+        
         // Can only add, remove, or create objects in a Realm in a write transaction - call beginWriteTransaction on an RLMRealm instance first.'
         // を避けるために必要な beginWriteTransaction()
 //        realm.beginWriteTransaction()
@@ -107,6 +120,48 @@ class TopViewController: UIViewController {
 //            print(path)
 //            try! NSFileManager().removeItemAtPath(path)
 //        }
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+
+        let realm = RLMRealm.defaultRealm()
+        print( "realm path is : " + realm.path )
+        
+        // やりかた１
+//        let result = DogRecord.objectsWhere("createdAt != 'invalidString' ")
+//        currentDogBreedNumberLabel.text = String( result.count )
+        
+        // やりかた２
+//        let schedules = DogRecord.allObjects()
+//        var uniqueIDs = [String]()
+//        var uniqueSchedules = [DogRecord]()
+//        for schedule in schedules {
+//            let schedule = schedule as! DogRecord
+//            let scheduleID = String( schedule.inceptionIndex ) // stored as Int32
+//            if !contains(uniqueIDs, scheduleID) {
+//                uniqueSchedules.append(schedule)
+//                uniqueIDs.append(scheduleID)
+//            }
+//        }
+        
+        // やりかた３
+        // Query all users
+        var dogIds : [Int32] = []
+        for d in DogRecord.allObjects() {
+            let idx = (d as! DogRecord).inceptionIndex
+            if( idx != -1 ){
+                if( dogIds.indexOf(idx) == nil ){
+                    dogIds.append(idx)
+                }
+            }
+        }
+        currentDogBreedNumberLabel.text = String( dogIds.count )
+        
+        
+//        }else{
+//            currentDogBreedNumberLabel.text = "0"
+//        }
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,6 +13,8 @@ class DogTableViewCell: UITableViewCell {
     @IBOutlet var labelA: UILabel!
     @IBOutlet var dogImageView: UIImageView!
     @IBOutlet var probLabel: UILabel!
+    @IBOutlet var inceptionIndexLabel: UILabel!
+    @IBOutlet var noCountLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

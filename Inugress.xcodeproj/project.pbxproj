@@ -22,6 +22,7 @@
 		472E1CEB1C5478A5005E3FE0 /* mean_224.bin in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEA1C5478A5005E3FE0 /* mean_224.bin */; };
 		472E1CED1C5484FA005E3FE0 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 472E1CEC1C5484FA005E3FE0 /* LICENSE */; };
 		6246D2A6A112251913EE731B /* libPods-Inugress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ACE90202785C061841A546 /* libPods-Inugress.a */; };
+		74661F6B1C872D4F00F8FDE8 /* SubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74661F6A1C872D4F00F8FDE8 /* SubViewController.swift */; };
 		747F09911C81438F002043B8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F098E1C81438F002043B8 /* Default-568h@2x.png */; };
 		747F09921C81438F002043B8 /* Default-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F098F1C81438F002043B8 /* Default-667h@2x.png */; };
 		747F09931C81438F002043B8 /* Default-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 747F09901C81438F002043B8 /* Default-736h@3x.png */; };
@@ -87,6 +88,7 @@
 		472E1CE71C546868005E3FE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		472E1CEA1C5478A5005E3FE0 /* mean_224.bin */ = {isa = PBXFileReference; lastKnownFileType = archive.macbinary; path = mean_224.bin; sourceTree = "<group>"; };
 		472E1CEC1C5484FA005E3FE0 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		74661F6A1C872D4F00F8FDE8 /* SubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubViewController.swift; sourceTree = "<group>"; };
 		747F098E1C81438F002043B8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		747F098F1C81438F002043B8 /* Default-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-667h@2x.png"; sourceTree = "<group>"; };
 		747F09901C81438F002043B8 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 				472E1CC11C545B31005E3FE0 /* Supporting Files */,
 				74F86F511C71C597000479E5 /* TopViewController.swift */,
 				74F86F531C71C95C000479E5 /* DogTableViewController.swift */,
+				74661F6A1C872D4F00F8FDE8 /* SubViewController.swift */,
 				747F09C41C818C84002043B8 /* RLMSupport.swift */,
 				74F86F551C71CDEA000479E5 /* DogTableViewCell.swift */,
 				74F86F561C71CDEA000479E5 /* DogTableViewCell.xib */,
@@ -477,6 +480,7 @@
 			files = (
 				747F09C31C8185D1002043B8 /* MyColorClass.swift in Sources */,
 				747F09C51C818C84002043B8 /* RLMSupport.swift in Sources */,
+				74661F6B1C872D4F00F8FDE8 /* SubViewController.swift in Sources */,
 				74F86F541C71C95C000479E5 /* DogTableViewController.swift in Sources */,
 				74F1C02E1C85DFDC0062E155 /* NSObject+MyColor.m in Sources */,
 				472E1CDB1C545B53005E3FE0 /* mxnet_predict-all.cc in Sources */,

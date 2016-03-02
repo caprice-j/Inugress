@@ -22,6 +22,10 @@
     return [UIColor colorWithRed:211.0/255.0 green:62.0/255.0 blue:67.0/255.0 alpha:1.0];
 }
 
++ (unsigned long)inceptionOffset{
+    return 150;
+}
+
 @end
 
 //    static let   textColor = UIColor(red: 71.0 / 255, green: 63.0 / 255, blue: 60.0 / 255, alpha: 1)

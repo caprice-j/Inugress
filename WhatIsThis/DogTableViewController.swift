@@ -54,7 +54,12 @@ class DogTableViewController: UITableViewController {
     let saveData = NSUserDefaults.standardUserDefaults()
     var dogObjects: RLMResults? = nil
     let savedKey: String = "KEY_S"
-    
+    var selectedCellImage: UIImage!
+    var selectedRecognizedString: String!
+    var selectedProbabilityString: String!
+    var selectedInceptionIndexString: String!
+    var selectedNoCountString: String!
+
     
     func cropThumbnailImage(image :UIImage, w:Int, h:Int) ->UIImage
     {
@@ -203,6 +208,14 @@ class DogTableViewController: UITableViewController {
         // cell.labelA.text = (nowIndexPathDictionary as! NSDictionary)[ "objname" ] as? String
         cell.labelA.text = nowIndexPathDictionary.recognizedNameString
         cell.probLabel.text = nowIndexPathDictionary.percent
+        let incIdx : Int32 = nowIndexPathDictionary.inceptionIndex
+        if( incIdx == -1 ){
+            cell.inceptionIndexLabel.text = " --"
+            cell.noCountLabel.text = "(NO COUNT)"
+        }else{
+            cell.inceptionIndexLabel.text = String( incIdx )
+            cell.noCountLabel.text = ""
+        }
 //        cell.labelA.text = "testtest"
         let image = UIImage( data: nowIndexPathDictionary.pictureNSData )
         cell.dogImageView.image = cropThumbnailImage(image!, w: 174, h: 220)
@@ -215,6 +228,41 @@ class DogTableViewController: UITableViewController {
 //        }
         
         return cell
+    }
+    
+    // セルを選択したとき
+    override func tableView(table: UITableView, didSelectRowAtIndexPath indexPath:NSIndexPath) {
+        // [indexPath.row] から画像名を探し、UImage を設定
+        let nowIndexPathDictionary : (AnyObject) = dogObjects![ UInt( indexPath.row )]
+
+        selectedCellImage = UIImage(data: nowIndexPathDictionary.pictureNSData )
+        selectedRecognizedString = nowIndexPathDictionary.recognizedNameString
+        selectedProbabilityString = nowIndexPathDictionary.percent
+        if( nowIndexPathDictionary.inceptionIndex != -1 ){
+            selectedNoCountString = ""
+            selectedInceptionIndexString = String( nowIndexPathDictionary.inceptionIndex )
+        }else{
+            selectedNoCountString = "(NO COUNT)"
+            selectedInceptionIndexString = " --"
+        }
+        if selectedCellImage != nil {
+            // SubViewController へ遷移するために Segue を呼び出す
+            performSegueWithIdentifier("toSubViewController",sender: nil)
+        }
+        
+    }
+    
+    // SubViewController の画面へ行くとき
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "toSubViewController") {
+            let subVC: SubViewController = (segue.destinationViewController as? SubViewController)!
+            // SubViewController のselectedImgに選択された画像を設定する
+            subVC.selectedImg = selectedCellImage
+            subVC.selectedRecognizedString = selectedRecognizedString
+            subVC.selectedProbabilityString = selectedProbabilityString
+            subVC.selectedNoCountString = selectedNoCountString
+            subVC.selectedInceptionIndexString = selectedInceptionIndexString
+        }
     }
     
 //    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
@@ -231,6 +279,7 @@ class DogTableViewController: UITableViewController {
     @IBAction func goBackToTop () {
         dismissViewControllerAnimated(true, completion: nil)
     }
+
 
     // MARK: - Table view data source
 

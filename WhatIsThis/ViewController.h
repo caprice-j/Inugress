@@ -37,6 +37,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *baloonImageView;
 @property (weak, nonatomic) IBOutlet UILabel *baloonLabel;
 @property (weak, nonatomic) IBOutlet UILabel *baloonLabel2;
+@property (weak, nonatomic) IBOutlet UILabel *inceptionIndexPrefixLabel;
+@property (weak, nonatomic) IBOutlet UILabel *inceptionIndexLabel;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *dogProbabilityLabel;
