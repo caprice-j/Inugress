@@ -26,6 +26,7 @@
     UIImage *meanImage;
     UIImage *previousSavedImage;
     float dogProbability;
+    size_t max_idx;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *borderLabel;
@@ -52,6 +53,7 @@
 
 - (void)otherButtonPushed;
 - (IBAction)goBackToTop:(id)sender;
+- (NSString *)currentTimeInNSString;
 
 @end
 

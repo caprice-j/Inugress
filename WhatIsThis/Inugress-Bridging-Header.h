@@ -11,6 +11,8 @@
 @property NSString * percent;
 @property BOOL isDog; // Boolean does not work for some reason ... too much waste of time
 @property NSData * pictureNSData;
+@property NSString * createdAt; // 主キーは String か 整数じゃないといけない？
+@property int inceptionIndex; // 主キーは String か 整数じゃないといけない？
 @end
 RLM_ARRAY_TYPE(DogRecord)
 

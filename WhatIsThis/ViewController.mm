@@ -15,6 +15,9 @@
 // この Implementation の2行がないと、 "_OBJC_CLASS_$_DogRecord", referenced from: というエラーになる
 @implementation DogRecord
 // 何も書かなくてよい
+//+ (NSString *)primaryKey {
+//    return @"createdAt";
+//}
 @end
 
 @interface ViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
@@ -100,8 +103,8 @@ NSString * noticeNSString = @"ではなく ... ";
     
     
     // 犬種のラベルが付けられた152 ~ 269 番の中で確率最大のものを探すのであればこれ
-    size_t max_idx = std::distance(outputs.begin(),
-                                   std::max_element(outputs.begin()+151, outputs.begin()+268 ));
+    max_idx = std::distance(outputs.begin(),
+                            std::max_element(outputs.begin()+151, outputs.begin()+268 ));
 
     NSLog([[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "]);
     NSLog(@"maxProbability: %f", outputs[max_idx] );
@@ -278,6 +281,19 @@ NSString * noticeNSString = @"ではなく ... ";
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
+- (NSString *)currentTimeInNSString{
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    [df setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"ja_JP"]]; // Localeの指定
+    [df setDateFormat:@"yyyy/MM/dd HH:mm:ss"];
+    
+    // 日付(NSDate) => 文字列(NSString)に変換
+    NSDate *now = [NSDate date];
+    NSString *strNow = [df stringFromDate:now];
+    
+    NSLog(@"CurrentTime：%@", strNow);
+    return strNow;
+}
+
 // メイン画面で "Save Photo" ボタンを押したときに呼ばれる関数。
 // 認識された結果である犬の情報を、NSUserDefaults に保存する。
 - (IBAction)saveSelectedImage:(id)sender {
@@ -374,13 +390,17 @@ NSString * noticeNSString = @"ではなく ... ";
     
     mydog.pictureNSData = UIImagePNGRepresentation( image );
     if( dogProbability < 0.01 ){
-        mydog.recognizedNameString = self.allDescriptionLabel.text;
-        mydog.percent = self.allPercentLabel.text;
+        mydog.recognizedNameString = self.labelDescription.text;
+        mydog.percent = self.dogProbabilityLabel.text;
         mydog.isDog = false;
+        mydog.createdAt = [self currentTimeInNSString];
+        mydog.inceptionIndex = -1; // placeholder
     }else{
         mydog.recognizedNameString = self.labelDescription.text;
         mydog.percent = self.dogProbabilityLabel.text;
         mydog.isDog = true;
+        mydog.createdAt = [self currentTimeInNSString];
+        mydog.inceptionIndex = max_idx;
     }
     
     RLMRealm *realm = [RLMRealm defaultRealm];
@@ -395,7 +415,7 @@ NSString * noticeNSString = @"ではなく ... ";
     
     // アラートを出す
     UIAlertController *alertController =
-      [UIAlertController alertControllerWithTitle:@"Completed"
+      [UIAlertController alertControllerWithTitle:@"SUCCESS"
                                           message:@"Saved to your album."
                                    preferredStyle:UIAlertControllerStyleAlert];
     

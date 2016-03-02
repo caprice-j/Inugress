@@ -92,8 +92,19 @@ class DogTableViewController: UITableViewController {
         return cropImage
     }
     
+    @IBOutlet var barBackButton : UIBarButtonItem!;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 色を変える
+        navigationController?.navigationBar.barTintColor = MyColor.backColor() // 上方、ナビ部分の背景色
+        navigationController?.navigationBar.tintColor = MyColor.textColor()    // 上方、ナビ部分の文字色 ("Back to Title", "Edit")
+        barBackButton.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Helvetica-Bold", size: 13)!], forState: UIControlState.Normal)
+
+        // 編集ボタンを左上に配置
+        navigationItem.rightBarButtonItem = editButtonItem()
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Helvetica-Bold", size: 13)!], forState: UIControlState.Normal)
         
         // 以下の一行はviewWillAppear() だとエラる おそらく tableView.registerNib() の前に呼ぶ必要がある
         dogObjects = DogRecord.allObjects()
@@ -133,6 +144,38 @@ class DogTableViewController: UITableViewController {
                 print("user.name: \( (dogObject as! DogRecord).recognizedNameString)")
             }
         }
+    }
+    
+    // Edit ボタンが押されたときに呼ばれる関数
+    override func setEditing(editing: Bool, animated: Bool) {
+        super.setEditing(editing, animated: animated)
+        tableView.editing = editing
+    }
+    
+    // 削除可能なセルの indexPath を指定する
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true // 全てのセルを削除可能にする
+    }
+    
+    // 削除された時の処理
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let nowIndexPathDictionary : (AnyObject) = dogObjects![ UInt( indexPath.row )]
+        
+        // Invalid update エラーを避けるため、先にデータを更新する
+        try! RLMRealm.defaultRealm().transactionWithBlock({ () -> Void in
+//            // 単一レコードの削除
+//            let dogObj = dogObjects(  )
+//            RLMRealm.defaultRealm().deleteObject(dogObj)
+//            // 複数レコードの削除
+            let result = dogObjects!.objectsWithPredicate(
+                NSPredicate(format: "createdAt == '\(nowIndexPathDictionary.createdAt)' " ))
+            RLMRealm.defaultRealm().deleteObjects(result)
+        })
+        
+        // それからテーブルの更新
+        tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: indexPath.row, inSection: 0)],
+            withRowAnimation: UITableViewRowAnimation.Fade)
     }
     
     // specify the number of sections

@@ -42,6 +42,9 @@ class TopViewController: UIViewController {
         
     }
     
+    func migrateMyRealm() {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -49,25 +52,49 @@ class TopViewController: UIViewController {
         
         clearAllNSDefaultsData()
 
-
+//        migrateMyRealm()
         let config = RLMRealmConfiguration.defaultConfiguration()
         
-        config.schemaVersion = 6;
+        // migration を行いたいときは、この schemaVersion を 既存の値よりも上げる必要がなぜかある
+        config.schemaVersion = 9;
         
         let migrationBlock: RLMMigrationBlock = { migration, oldSchemaVersion in
-            if oldSchemaVersion < 1 {
-                migration.enumerateObjects(DogRecord.className(), block: {
-//                    oldObject, newObject in newObject!["isDog"] = true
-                    dummy in 1
+            if oldSchemaVersion > 1 {
+            
+                var prvalue: Int = 120;
+                
+                // 処理を行いたいクラス名を渡すと、oldObject と newObject に値が入る
+                migration.enumerateObjects(DogRecord.className(), block: { oldObject, newObject in
+                    
+                        // newObject!["createdAt"] = String( prvalue++ )
+                        // prvalue = prvalue + 1
+                    
+                        // MAYBE-LATER: 表示されない ... ?
+                        NSLog("\n** migration occurred ** \n");
+                    
+                        // NSLog(String(oldObject!["createdAt"]))
+                    
+
+                        // if( seen.containsObject(newObject!["createdAt"]!) ){
+                        
+//                            toDelete.addObject(newObject!)
+                        //}
+                        //seen.addObject(newObject!["createdAt"]!)
+
+
+                    // dummy in 1
                 })
-            }
+  //              migration.delete(toDelete)
+             }
         }
         
-        RLMRealmConfiguration.setDefaultConfiguration(config)
         
+        RLMRealmConfiguration.setDefaultConfiguration(config)
+        RLMRealm.migrateRealm(config)
+
         let realm = RLMRealm.defaultRealm()
         
-        print( realm.path )
+         print( "realm path is : " + realm.path )
         // Can only add, remove, or create objects in a Realm in a write transaction - call beginWriteTransaction on an RLMRealm instance first.'
         // を避けるために必要な beginWriteTransaction()
 //        realm.beginWriteTransaction()
