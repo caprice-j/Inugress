@@ -160,16 +160,22 @@ class DogTableViewController: UITableViewController {
 //        cell.labelA.text = "testtest"
         let image = UIImage( data: nowIndexPathDictionary.pictureNSData )
         cell.dogImageView.image = cropThumbnailImage(image!, w: 174, h: 220)
-        
-        if(( nowIndexPathDictionary.isDog ) != nil){
-            cell.backgroundColor = MyColor.accentColor()
-        }else{
-            
-        }
+
+        // doesn(t work well...
+//        if( nowIndexPathDictionary.isDog == false ){
+//            cell.contentView.backgroundColor = MyColor.accentColor()
+//        }else{
+//            
+//        }
         
         return cell
     }
     
+//    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath)
+//    {
+//        let nowIndexPathDictionary : (AnyObject) = dogObjects![ UInt( indexPath.row )]
+//print(nowIndexPathDictionary.isDog)
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

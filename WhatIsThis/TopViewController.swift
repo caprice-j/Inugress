@@ -57,7 +57,8 @@ class TopViewController: UIViewController {
         let migrationBlock: RLMMigrationBlock = { migration, oldSchemaVersion in
             if oldSchemaVersion < 1 {
                 migration.enumerateObjects(DogRecord.className(), block: {
-                    oldObject, newObject in newObject!["isDog"] = true
+//                    oldObject, newObject in newObject!["isDog"] = true
+                    dummy in 1
                 })
             }
         }

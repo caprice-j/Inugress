@@ -25,6 +25,7 @@
     float model_mean[kDefaultImageSize];
     UIImage *meanImage;
     UIImage *previousSavedImage;
+    float dogProbability;
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *borderLabel;

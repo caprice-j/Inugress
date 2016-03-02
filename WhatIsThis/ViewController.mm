@@ -109,7 +109,7 @@ NSString * noticeNSString = @"ではなく ... ";
     
     // labelDescription は既に didFinishPickingMediaWithInfo 内部で変更されている
     
-    float dogProbability = outputs[max_idx];
+    dogProbability = outputs[max_idx];
     
     if( dogProbability > 0.01 ){
         // 犬であると判定した
@@ -128,20 +128,25 @@ NSString * noticeNSString = @"ではなく ... ";
         self.allPercentLabel.text = @"";
         
     }else{
+        // 犬以外であると判定した
+        self.dogPercentLabel.text = @"%";
+
         // self.labelDescription.text = @"犬が写っている可能性は ... "; // FIXME : async の方が優先されてしまう
-        self.dogProbabilityLabel.font =[self.dogProbabilityLabel.font fontWithSize:15];
-        self.dogProbabilityLabel.text = noticeNSString;
-        self.dogPercentLabel.text = @"";
-        self.allProbabilityLabel.text =
-        [ NSString stringWithFormat:@"%.1f", [self roundProbability: outputs[allMaxIdx] ] ];
+        // self.dogProbabilityLabel.font =[self.dogProbabilityLabel.font fontWithSize:15];
+        self.dogProbabilityLabel.text = // noticeNSString;
+          [ NSString stringWithFormat:@"%.1f", [self roundProbability: outputs[allMaxIdx] ] ];
+        // self.dogPercentLabel.text = @"";
+        
+        // self.allProbabilityLabel.text =
+        // [ NSString stringWithFormat:@"%.1f", [self roundProbability: outputs[allMaxIdx] ] ];
         self.allDescriptionLabel.backgroundColor = [UIColor whiteColor];
-        self.allDescriptionLabel.text =
-        [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "];
         
         self.baloonImageView.image = [UIImage imageNamed: @"baloon.png"];
         self.baloonLabel.text = @"もしかして...";
+        self.allDescriptionLabel.text =
+          [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "]; // "バインダー" などの物体名
         self.baloonLabel2.text = @"かも？";
-        self.allPercentLabel.text = @"%";
+        // self.allPercentLabel.text = @"%";
         
     }
    
@@ -368,7 +373,7 @@ NSString * noticeNSString = @"ではなく ... ";
     NSLog( @" Image size is %d KB", (int) floor( UIImagePNGRepresentation( image ).length / 1000 ) );
     
     mydog.pictureNSData = UIImagePNGRepresentation( image );
-    if( [self.dogPercentLabel.text  isEqual: noticeNSString] ){
+    if( dogProbability < 0.01 ){
         mydog.recognizedNameString = self.allDescriptionLabel.text;
         mydog.percent = self.allPercentLabel.text;
         mydog.isDog = false;
