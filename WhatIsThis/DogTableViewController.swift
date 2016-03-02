@@ -176,6 +176,9 @@ class DogTableViewController: UITableViewController {
         // それからテーブルの更新
         tableView.deleteRowsAtIndexPaths([NSIndexPath(forRow: indexPath.row, inSection: 0)],
             withRowAnimation: UITableViewRowAnimation.Fade)
+
+        // tableView.reloadData() // 必要ない？
+        
     }
     
     // specify the number of sections

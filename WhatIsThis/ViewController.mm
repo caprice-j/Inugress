@@ -152,6 +152,10 @@ NSString * noticeNSString = @"ではなく ... ";
         // self.allPercentLabel.text = @"%";
         
     }
+    
+    if( [self.dogProbabilityLabel.text  isEqual: @"100.0"] ){
+        self.dogProbabilityLabel.text = @"100";
+    }
    
 
     
