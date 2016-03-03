@@ -53,6 +53,7 @@ class DogTableViewController: UITableViewController {
     var wordArray: [AnyObject] = []
     let saveData = NSUserDefaults.standardUserDefaults()
     var dogObjects: RLMResults? = nil
+    var dogObjectsSorted: RLMResults? = nil
     let savedKey: String = "KEY_S"
     var selectedCellImage: UIImage!
     var selectedRecognizedString: String!
@@ -112,7 +113,9 @@ class DogTableViewController: UITableViewController {
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([ NSFontAttributeName: UIFont(name: "Helvetica-Bold", size: 13)!], forState: UIControlState.Normal)
         
         // 以下の一行はviewWillAppear() だとエラる おそらく tableView.registerNib() の前に呼ぶ必要がある
-        dogObjects = DogRecord.allObjects()
+        // dogObjects = DogRecord.allObjects()
+        
+        dogObjects = DogRecord.allObjects().sortedResultsUsingProperty("inceptionIndex", ascending: true)
         
         // self.view.frame.width
         
