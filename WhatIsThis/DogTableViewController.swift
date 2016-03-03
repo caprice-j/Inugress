@@ -129,6 +129,9 @@ class DogTableViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        // FIXME: xlibに自動で同期させたい
+        self.tableView.rowHeight = 65
+        
         if saveData.arrayForKey(savedKey) != nil {
             wordArray = saveData.arrayForKey(savedKey)!
             print("record exists")
@@ -218,7 +221,7 @@ class DogTableViewController: UITableViewController {
         }
 //        cell.labelA.text = "testtest"
         let image = UIImage( data: nowIndexPathDictionary.pictureNSData )
-        cell.dogImageView.image = cropThumbnailImage(image!, w: 174, h: 220)
+        cell.dogImageView.image = cropThumbnailImage(image!, w: 60, h: 74)
 
         // doesn(t work well...
 //        if( nowIndexPathDictionary.isDog == false ){
