@@ -246,8 +246,8 @@ n02108551	Tibetan mastiff	チベタン・マスティフ
 n02108915	French bulldog	フレンチブルドッグ
 n02109047	Great Dane	グレートデーン
 n02109525	Saint Bernard / St Bernard	セントバーナード/セントバーナード
-n02109961	Eskimo dog / husky	エスキモー犬/ハスキー
-n02110063	malamute / Alaskan malamute	マラミュート /エスキモー犬
+n02109961	Canadian Eskimo dog カナディアン・エスキモー・ドッグ
+n02110063	malamute / Alaskan malamute	マラミュート / アラスカン・マラミュート
 n02110185	Siberian husky	シベリアンハスキー
 n02110341	dalmatian / coach dog / carriage dog	ダルメシアン/コーチの犬/キャリッジ犬
 n02110627	affenpinscher / monkey pinscher / monkey dog	アーフェンピンシャー/サルピンシャー/モンキードッグ

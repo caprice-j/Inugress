@@ -155,7 +155,25 @@ class TopViewController: UIViewController {
                 }
             }
         }
+        
+        // 0 種のときは情報が多すぎるので消す
+        
+        print("dogIds.count: " + String(dogIds.count))
+        if( dogIds.count > 0 ){
+            dogBreedPrefixLabel.text    = "現在"
+            dogBreedSlashLabel.text     = "/"
+            dogBreedMaximumLabel.text   = "118"
+            dogBreedSuffixLabel.text    = "種"
         currentDogBreedNumberLabel.text = String( dogIds.count )
+            
+        }else{
+              dogBreedPrefixLabel.text  = ""
+              dogBreedSlashLabel.text   = ""
+              dogBreedMaximumLabel.text = ""
+              dogBreedSuffixLabel.text  = ""
+        currentDogBreedNumberLabel.text = ""
+
+        }
         
         
 //        }else{
