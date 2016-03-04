@@ -234,41 +234,41 @@ NSString * noticeNSString = @"ではなく ... ";
         }
         
         //< Visualize the Mean Data
-        std::vector<uint8_t> mean_with_alpha(kDefaultWidth*kDefaultHeight*(kDefaultChannels+1), 0);
-        float *p_mean[3] = {
-            model_mean,
-            model_mean + kDefaultWidth*kDefaultHeight,
-            model_mean + kDefaultWidth*kDefaultHeight*2};
-        for (int i = 0, map_idx = 0, glb_idx = 0; i < kDefaultHeight; i++) {
-            for (int j = 0; j < kDefaultWidth; j++) {
-                mean_with_alpha[glb_idx++] = p_mean[0][map_idx];
-                mean_with_alpha[glb_idx++] = p_mean[1][map_idx];
-                mean_with_alpha[glb_idx++] = p_mean[2][map_idx];
-                mean_with_alpha[glb_idx++] = 0;
-                map_idx++;
-            }
-        }
-        
-        NSData *mean_data = [NSData dataWithBytes:mean_with_alpha.data() length:mean_with_alpha.size()*sizeof(float)];
-        CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef)mean_data);
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
-        // Creating CGImage from cv::Mat
-        CGImageRef imageRef = CGImageCreate(kDefaultWidth,
-                                            kDefaultHeight,
-                                            8,
-                                            8*(kDefaultChannels+1),
-                                            kDefaultWidth*(kDefaultChannels+1),
-                                            colorSpace,
-                                            kCGImageAlphaNone|kCGBitmapByteOrderDefault,
-                                            provider,
-                                            NULL,
-                                            false,
-                                            kCGRenderingIntentDefault
-                                            );
-        meanImage = [UIImage imageWithCGImage:imageRef];
-        CGImageRelease(imageRef);
-        CGDataProviderRelease(provider);
-        self.imageViewPhoto.image = meanImage;
+//        std::vector<uint8_t> mean_with_alpha(kDefaultWidth*kDefaultHeight*(kDefaultChannels+1), 0);
+//        float *p_mean[3] = {
+//            model_mean,
+//            model_mean + kDefaultWidth*kDefaultHeight,
+//            model_mean + kDefaultWidth*kDefaultHeight*2};
+//        for (int i = 0, map_idx = 0, glb_idx = 0; i < kDefaultHeight; i++) {
+//            for (int j = 0; j < kDefaultWidth; j++) {
+//                mean_with_alpha[glb_idx++] = p_mean[0][map_idx];
+//                mean_with_alpha[glb_idx++] = p_mean[1][map_idx];
+//                mean_with_alpha[glb_idx++] = p_mean[2][map_idx];
+//                mean_with_alpha[glb_idx++] = 0;
+//                map_idx++;
+//            }
+//        }
+//        
+//        NSData *mean_data = [NSData dataWithBytes:mean_with_alpha.data() length:mean_with_alpha.size()*sizeof(float)];
+//        CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef)mean_data);
+//        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+//        // Creating CGImage from cv::Mat
+//        CGImageRef imageRef = CGImageCreate(kDefaultWidth,
+//                                            kDefaultHeight,
+//                                            8,
+//                                            8*(kDefaultChannels+1),
+//                                            kDefaultWidth*(kDefaultChannels+1),
+//                                            colorSpace,
+//                                            kCGImageAlphaNone|kCGBitmapByteOrderDefault,
+//                                            provider,
+//                                            NULL,
+//                                            false,
+//                                            kCGRenderingIntentDefault
+//                                            );
+//        meanImage = [UIImage imageWithCGImage:imageRef];
+//        CGImageRelease(imageRef);
+//        CGDataProviderRelease(provider);
+//        self.imageViewPhoto.image = meanImage;
     }
 }
 
