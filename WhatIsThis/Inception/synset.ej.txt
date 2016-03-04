@@ -151,7 +151,7 @@ n02074367	dugong / Dugong dugon	ジュゴン/ジュゴン
 n02077923	sea lion	アシカ
 n02085620	Chihuahua	チワワ
 n02085782	Japanese spaniel	チン / 狆（ちん）
-n02085936	Maltese dog / Maltese terrier / Maltese	マルチーズ犬/マルチーズテリア/マルタ
+n02085936	Maltese dog / Maltese terrier	マルチーズ犬 / マルチーズテリア
 n02086079	Pekinese / Pekingese / Peke	狆/ペキニーズ/ PEKE
 n02086240	Shih-Tzu	シーズー、シーズー
 n02086646	Blenheim spaniel	ブレナムスパニエル
@@ -161,18 +161,18 @@ n02087394	Rhodesian ridgeback	ローデシアン・リッジバック
 n02088094	Afghan hound / Afghan	アフガンハウンド/アフガン
 n02088238	basset / basset hound	バセット/バセットハウンド
 n02088364	beagle	ビーグル
-n02088466	bloodhound / sleuthhound	ブラッドハウンド/ブラッドハウンド
+n02088466	bloodhound / sleuthhound	ブラッドハウンド
 n02088632	bluetick	ブルーティック・クーンハウンド
 n02089078	black-and-tan coonhound	黒と黄褐色のアライグマ用の猟犬 / ブラック・アンド・タン・クーンハウンド
-n02089867	Walker hound / Walker foxhound	ウォーカーハウンド/ウォーカーフォックスハウンド
+n02089867	Walker hound / Walker foxhound	ウォーカーハウンド / ウォーカーフォックスハウンド
 n02089973	English foxhound	イングリッシュ・フォックスハウンド
 n02090379	redbone	レッドボーン
-n02090622	borzoi / Russian wolfhound	ボルゾイ/ロシアウルフハウンド
+n02090622	borzoi / Russian wolfhound	ボルゾイ / ロシアウルフハウンド
 n02090721	Irish wolfhound	アイリッシュ・ウルフハウンド
 n02091032	Italian greyhound	イタリアングレーハウンド
 n02091134	whippet	ウィペット
 n02091244	Ibizan hound / Ibizan Podenco	イビサハウンド/イビサPodenco
-n02091467	Norwegian elkhound / elkhound	ノルウェーエルクハウンド/エルクハウンド
+n02091467	Norwegian elkhound / elkhound	ノルウェーエルクハウンド / エルクハウンド
 n02091635	otterhound / otter hound	オッターハウンド/オッターハウンド
 n02091831	Saluki / gazelle hound	サルーキ/ガゼルハウンド
 n02092002	Scottish deerhound / deerhound	スコティッシュ・ディアハウンド/ディアハウンド
@@ -261,8 +261,8 @@ n02112018	Pomeranian	ポメラニアン
 n02112137	chow / chow chow	チャウ/チャウチャウ
 n02112350	keeshond	キースホンド
 n02112706	Brabancon griffon	バーバンコン・グリフォン
-n02113023	Pembroke / Pembroke Welsh corgi	ペンブローク/ペンブロークウェルシュコーギー
-n02113186	Cardigan / Cardigan Welsh corgi	カーディガン/カーディガンウェルシュコーギー
+n02113023	Pembroke Welsh corgi	ペンブロークウェルシュコーギー
+n02113186	Cardigan Welsh corgi	カーディガンウェルシュコーギー
 n02113624	toy poodle	トイプードル
 n02113712	miniature poodle	ミニチュアプードル
 n02113799	standard poodle	スタンダードプードル
@@ -271,7 +271,7 @@ n02114367	timber wolf / grey wolf / gray wolf / Canis lupus	オオカミ
 n02114548	white wolf / Arctic wolf / Canis lupus tundrarum	白狼/北極オオカミ/オオカミのtundrarum
 n02114712	red wolf / maned wolf / Canis rufus / Canis niger	赤狼/タテガミオオカミ/おおいぬ座ルーファス/カニス・ニゲル
 n02114855	coyote / prairie wolf / brush wolf / Canis latrans	コヨーテ/草原の狼/ブラシオオカミ/コヨーテ
-n02115641	dingo / warrigal / warragal / Canis dingo	ディンゴ/野生の/ warragal /カニスディンゴ
+n02115641	dingo / Canis dingo	ディンゴ / カニスディンゴ
 n02115913	dhole / Cuon alpinus	ドール/ドール
 n02116738	African hunting dog / hyena dog / Cape hunting dog / Lycaon pictus	アフリカの狩猟犬/ハイエナ犬/ケープ狩猟犬/リカオン
 n02117135	hyena / hyaena	ハイエナ/ハイエナ
