@@ -39,13 +39,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *baloonLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *inceptionIndexPrefixLabel;
 @property (weak, nonatomic) IBOutlet UILabel *inceptionIndexLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondCandidateLabel;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *dogProbabilityLabel;
-@property (weak, nonatomic) IBOutlet UILabel *allDescriptionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *allProbabilityLabel;
-
-@property (weak, nonatomic) IBOutlet UILabel *allPercentLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dogPercentLabel;
 
 @property (weak, nonatomic) IBOutlet UIButton *goBackToTopButton;
@@ -53,9 +50,23 @@
 @property (weak, nonatomic) IBOutlet UIButton *selectPhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *saveResultButton;
 
+@property (weak, nonatomic) IBOutlet UILabel *secondDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondProbabilityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *secondPercentSymbolLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *thirdDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *thirdProbabilityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *thirdPercentSymbolLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *fourthDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fourthProbabilityLabel;
+@property (weak, nonatomic) IBOutlet UILabel *fourthPercentSymbolLabel;
+
 - (void)otherButtonPushed;
 - (IBAction)goBackToTop:(id)sender;
 - (NSString *)currentTimeInNSString;
-
+- (void)displaySecond;
+- (void)displayThird;
+- (void)clearRankingText;
 @end
 

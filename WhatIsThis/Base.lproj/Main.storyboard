@@ -21,6 +21,10 @@
             <string>Ricty-Bold</string>
             <string>Ricty-Bold</string>
             <string>Ricty-Bold</string>
+            <string>Ricty-Bold</string>
+            <string>Ricty-Bold</string>
+            <string>Ricty-Bold</string>
+            <string>Ricty-Bold</string>
         </mutableArray>
         <mutableArray key="nicokaku_v1.ttf">
             <string>NicoKaku</string>
@@ -122,15 +126,43 @@
                                     <action selector="goBackToTop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UMI-cC-aS3"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="baloon.png" id="K7L-Zl-DsK">
-                                <rect key="frame" x="121" y="349" width="191" height="149"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1eX-4X-pV4">
-                                <rect key="frame" x="139" y="389" width="153" height="61"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="1eX-4X-pV4">
+                                <rect key="frame" x="126" y="368" width="122" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D8v-dS-GqE">
+                                <rect key="frame" x="254" y="374" width="42" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WHT-p9-U1x">
+                                <rect key="frame" x="254" y="408" width="42" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HLw-Ha-aQn">
+                                <rect key="frame" x="126" y="399" width="122" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.68366235060000002" blue="0.82816590310000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="10"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="00j-ar-Jrk">
+                                <rect key="frame" x="126" y="432" width="122" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -141,15 +173,29 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="もしかして…" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DQC-LX-OGg">
-                                <rect key="frame" x="147" y="368" width="113" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="もしかして..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DQC-LX-OGg">
+                                <rect key="frame" x="117" y="345" width="131" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="かも？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vih-ea-fcT">
-                                <rect key="frame" x="223" y="450" width="56" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vih-ea-fcT">
+                                <rect key="frame" x="298" y="378" width="11" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vsT-IV-Xv8">
+                                <rect key="frame" x="298" y="411" width="11" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="dh5-YW-1Vp">
+                                <rect key="frame" x="298" y="444" width="11" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Ricty-Bold" family="Ricty" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -200,6 +246,14 @@
                                     <action selector="saveSelectedImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="890-j5-16I"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="32.3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XZw-dU-TuH">
+                                <rect key="frame" x="254" y="441" width="42" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96078431372549022" blue="0.90980392156862744" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -207,23 +261,27 @@
                     <navigationItem key="navigationItem" id="dPa-NJ-oFc"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="allDescriptionLabel" destination="1eX-4X-pV4" id="y6r-pP-zF2"/>
-                        <outlet property="allPercentLabel" destination="6vh-rQ-OQ5" id="sWQ-59-nvz"/>
-                        <outlet property="allProbabilityLabel" destination="hzA-42-1SH" id="umd-52-Nmn"/>
-                        <outlet property="baloonImageView" destination="K7L-Zl-DsK" id="CnL-h2-puk"/>
                         <outlet property="baloonLabel" destination="DQC-LX-OGg" id="aMg-SI-sA0"/>
-                        <outlet property="baloonLabel2" destination="vih-ea-fcT" id="2mf-TK-GVJ"/>
                         <outlet property="borderLabel" destination="Ktm-BY-wy3" id="1Jq-8V-RZK"/>
                         <outlet property="dogPercentLabel" destination="1xN-pY-DUl" id="RGH-XA-scP"/>
                         <outlet property="dogProbabilityLabel" destination="CvW-gg-bh2" id="dhw-Ax-Zv9"/>
+                        <outlet property="fourthDescriptionLabel" destination="00j-ar-Jrk" id="DYW-5N-d1j"/>
+                        <outlet property="fourthPercentSymbolLabel" destination="dh5-YW-1Vp" id="g0l-vV-S59"/>
+                        <outlet property="fourthProbabilityLabel" destination="XZw-dU-TuH" id="5Ni-JK-dGT"/>
                         <outlet property="goBackToTopButton" destination="ofS-Qs-Ayf" id="932-IS-iY9"/>
                         <outlet property="imageViewPhoto" destination="5uT-4f-HMh" id="uXC-Fd-HJX"/>
                         <outlet property="inceptionIndexLabel" destination="AdB-tQ-ary" id="jZe-IT-PoT"/>
                         <outlet property="inceptionIndexPrefixLabel" destination="XOG-uO-PWP" id="NxX-Z2-sPx"/>
                         <outlet property="labelDescription" destination="dje-xX-ydn" id="DkY-aJ-Kvu"/>
                         <outlet property="saveResultButton" destination="TTE-7p-XJv" id="vN9-80-abI"/>
+                        <outlet property="secondDescriptionLabel" destination="1eX-4X-pV4" id="IYF-my-qsI"/>
+                        <outlet property="secondPercentSymbolLabel" destination="vih-ea-fcT" id="BRU-cg-dVH"/>
+                        <outlet property="secondProbabilityLabel" destination="D8v-dS-GqE" id="PJ4-Ux-qRd"/>
                         <outlet property="selectPhotoButton" destination="fEo-C7-pyA" id="9HV-jN-xHO"/>
                         <outlet property="takePhotoButton" destination="YFi-JG-R39" id="geE-Qz-Esm"/>
+                        <outlet property="thirdDescriptionLabel" destination="HLw-Ha-aQn" id="ypt-1W-dfn"/>
+                        <outlet property="thirdPercentSymbolLabel" destination="vsT-IV-Xv8" id="HcR-PT-Ip2"/>
+                        <outlet property="thirdProbabilityLabel" destination="WHT-p9-U1x" id="dmx-Mc-n5v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -524,7 +582,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="baloon.png" width="518" height="241"/>
         <image name="stamp.png" width="4502" height="446"/>
     </resources>
 </document>

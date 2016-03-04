@@ -114,6 +114,14 @@ NSString * noticeNSString = @"ではなく ... ";
     
     dogProbability = outputs[max_idx];
     
+    struct Comp{
+        Comp( const std::vector<float>& v ) : _v(v) {}
+        bool operator ()(int a, int b) { return _v[a] > _v[b]; }
+        const std::vector<float>& _v;
+    };
+    
+    [self clearRankingText];
+    
     if( dogProbability > 0.01 ){
         // 犬であると判定した
         
@@ -123,16 +131,43 @@ NSString * noticeNSString = @"ではなく ... ";
 
         self.dogPercentLabel.text = @"%";
 
-        self.allDescriptionLabel.text = @"";
-        self.allDescriptionLabel.backgroundColor = [MyColor backColor];
-        self.baloonImageView.image = nil;
         self.baloonLabel.text = @"";
-        self.baloonLabel2.text = @"";
-        self.allPercentLabel.text = @"";
         
         self.inceptionIndexPrefixLabel.text = @"No.";
         self.inceptionIndexLabel.text = [NSString stringWithFormat:@"%lu", (max_idx - [MyColor inceptionOffset] )];
+        
+        if (dogProbability < 0.6 ) {
+            // 他に正解の候補がありそう
+            std::vector<int> vx;
+            vx.resize(outputs.size());
+            for( int i= 0; i<outputs.size(); ++i ) vx[i]= i;
+            partial_sort( vx.begin(), vx.begin()+5, vx.end(), Comp(outputs) );
+            NSLog(@"outputs[%d]: %.3f %@", vx[0], outputs[vx[0]], [[model_synset objectAtIndex:vx[0]] componentsJoinedByString:@" "] );
+            NSLog(@"outputs[%d]: %.3f %@", vx[1], outputs[vx[1]], [[model_synset objectAtIndex:vx[1]] componentsJoinedByString:@" "] );
+            NSLog(@"outputs[%d]: %.3f %@", vx[2], outputs[vx[2]], [[model_synset objectAtIndex:vx[2]] componentsJoinedByString:@" "] );
+            NSLog(@"outputs[%d]: %.3f %@", vx[3], outputs[vx[3]], [[model_synset objectAtIndex:vx[3]] componentsJoinedByString:@" "] );
+            NSLog(@"outputs[%d]: %.3f %@", vx[4], outputs[vx[4]], [[model_synset objectAtIndex:vx[4]] componentsJoinedByString:@" "] );
+            
+           [self displaySecond];
+            self.secondDescriptionLabel.text = [[model_synset objectAtIndex:vx[1]] componentsJoinedByString:@" "];
+            self.secondProbabilityLabel.text =
+            [ NSString stringWithFormat:@"%.1f", [self roundProbability: outputs[vx[1]] ]];
 
+           [self displayThird];
+            self.thirdDescriptionLabel.text = [[model_synset objectAtIndex:vx[2]] componentsJoinedByString:@" "];
+            self.thirdProbabilityLabel.text =
+            [ NSString stringWithFormat:@"%.1f", [self roundProbability: outputs[vx[2]] ]];
+            
+            if( outputs[vx[3]] > 0.01 ){
+                
+                [self displayFourth];
+                self.fourthDescriptionLabel.text = [[model_synset objectAtIndex:vx[3]] componentsJoinedByString:@" "];
+                self.fourthProbabilityLabel.text =
+                [ NSString stringWithFormat:@"%.1f", [self roundProbability: outputs[vx[3]] ]];
+                
+            }
+            
+        }
     }else{
         // 犬以外であると判定した
         self.dogPercentLabel.text = @"%";
@@ -145,13 +180,13 @@ NSString * noticeNSString = @"ではなく ... ";
         
         // self.allProbabilityLabel.text =
         // [ NSString stringWithFormat:@"%.1f", [self roundProbability: outputs[allMaxIdx] ] ];
-        self.allDescriptionLabel.backgroundColor = [UIColor whiteColor];
         
-        self.baloonImageView.image = [UIImage imageNamed: @"baloon.png"];
-        self.baloonLabel.text = @"もしかして...";
-        self.allDescriptionLabel.text =
+        [self displaySecond];
+        self.secondDescriptionLabel.text =
           [[model_synset objectAtIndex:allMaxIdx] componentsJoinedByString:@" "]; // "バインダー" などの物体名
-        self.baloonLabel2.text = @"かも？";
+        self.secondProbabilityLabel.text = @"";
+        self.secondPercentSymbolLabel.text = @"";
+        
         // self.allPercentLabel.text = @"%";
         self.inceptionIndexPrefixLabel.text = @"No.";
         self.inceptionIndexLabel.text = @" --";
@@ -167,6 +202,53 @@ NSString * noticeNSString = @"ではなく ... ";
     return [[model_synset objectAtIndex:max_idx] componentsJoinedByString:@" "];
 }
 
+- (void)displaySecond {
+    // self.secondDescriptionLabel.backgroundColor = [MyColor backColor];
+//    self.baloonImageView.image = [UIImage imageNamed: @"baloon.png"];
+    self.baloonLabel.text = @"もしかして...";
+    self.secondPercentSymbolLabel.text = @"%";
+//    self.baloonLabel2.text = @"かも？";
+}
+
+- (void)displayThird {
+    // self.thirdDescriptionLabel.backgroundColor = [MyColor backColor];
+    //    self.baloonImageView.image = [UIImage imageNamed: @"baloon.png"];
+    self.baloonLabel.text = @"もしかして...";
+    self.thirdPercentSymbolLabel.text = @"%";
+    //    self.baloonLabel2.text = @"かも？";
+}
+
+- (void)displayFourth {
+    // self.fourthDescriptionLabel.backgroundColor = [MyColor backColor];
+    //    self.baloonImageView.image = [UIImage imageNamed: @"baloon.png"];
+    self.baloonLabel.text = @"もしかして...";
+    self.fourthPercentSymbolLabel.text = @"%";
+    //    self.baloonLabel2.text = @"かも？";
+}
+
+- (void)clearRankingText {
+    self.secondDescriptionLabel.backgroundColor = [MyColor backColor];
+    self.thirdDescriptionLabel.backgroundColor = [MyColor backColor];
+    self.fourthDescriptionLabel.backgroundColor = [MyColor backColor];
+    self.secondPercentSymbolLabel.backgroundColor = [MyColor backColor];
+    self.thirdPercentSymbolLabel.backgroundColor = [MyColor backColor];
+    self.fourthPercentSymbolLabel.backgroundColor = [MyColor backColor];
+    self.secondProbabilityLabel.backgroundColor = [MyColor backColor];
+    self.thirdProbabilityLabel.backgroundColor = [MyColor backColor];
+    self.fourthProbabilityLabel.backgroundColor = [MyColor backColor];
+    
+    self.secondDescriptionLabel.text   = @"";
+    self.thirdDescriptionLabel.text    = @"";
+    self.fourthDescriptionLabel.text   = @"";
+    self.secondPercentSymbolLabel.text = @"";
+    self.thirdPercentSymbolLabel.text  = @"";
+    self.fourthPercentSymbolLabel.text = @"";
+    self.secondProbabilityLabel.text   = @"";
+    self.thirdProbabilityLabel.text    = @"";
+    self.fourthProbabilityLabel.text   = @"";
+}
+
+
 - (void)viewDidLoad {
     
     self.imageViewPhoto.layer.borderWidth = 3.0f;
@@ -178,10 +260,9 @@ NSString * noticeNSString = @"ではなく ... ";
     self.borderLabel.layer.borderWidth = 3.0;
     
 //    self.saveResultButton.backgroundColor = [MyColorClass backColor];
-    
-    self.allDescriptionLabel.backgroundColor = [MyColor backColor];
-    self.allDescriptionLabel.text = @"";
-    self.allPercentLabel.text     = @"";
+
+    [self clearRankingText];
+
     self.baloonLabel.text         = @"";
     self.baloonLabel2.text        = @"";
     self.dogPercentLabel.text     = @"";
@@ -192,7 +273,7 @@ NSString * noticeNSString = @"ではなく ... ";
 
     
     self.labelDescription.numberOfLines = 0;
-    self.allDescriptionLabel.numberOfLines = 0;
+    self.secondDescriptionLabel.numberOfLines = 0;
     
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

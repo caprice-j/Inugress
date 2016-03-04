@@ -247,7 +247,7 @@ n02108915	French bulldog	フレンチブルドッグ
 n02109047	Great Dane	グレートデーン
 n02109525	Saint Bernard / St Bernard	セントバーナード/セントバーナード
 n02109961	Canadian Eskimo dog カナディアン・エスキモー・ドッグ
-n02110063	malamute / Alaskan malamute	マラミュート / アラスカン・マラミュート
+n02110063	Alaskan malamute	アラスカン・マラミュート
 n02110185	Siberian husky	シベリアンハスキー
 n02110341	dalmatian / coach dog / carriage dog	ダルメシアン/コーチの犬/キャリッジ犬
 n02110627	affenpinscher / monkey pinscher / monkey dog	アーフェンピンシャー/サルピンシャー/モンキードッグ
@@ -267,7 +267,7 @@ n02113624	toy poodle	トイプードル
 n02113712	miniature poodle	ミニチュアプードル
 n02113799	standard poodle	スタンダードプードル
 n02113978	Mexican hairless	メキシカン・ヘアレス・ドッグ
-n02114367	timber wolf / grey wolf / gray wolf / Canis lupus	木材狼/オオカミ/グレー狼/オオカミ
+n02114367	timber wolf / grey wolf / gray wolf / Canis lupus	オオカミ
 n02114548	white wolf / Arctic wolf / Canis lupus tundrarum	白狼/北極オオカミ/オオカミのtundrarum
 n02114712	red wolf / maned wolf / Canis rufus / Canis niger	赤狼/タテガミオオカミ/おおいぬ座ルーファス/カニス・ニゲル
 n02114855	coyote / prairie wolf / brush wolf / Canis latrans	コヨーテ/草原の狼/ブラシオオカミ/コヨーテ
