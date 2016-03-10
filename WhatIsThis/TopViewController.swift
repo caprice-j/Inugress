@@ -7,8 +7,44 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class TopViewController: UIViewController {
+class TopViewController: UIViewController, GADBannerViewDelegate {
+    
+    // AdMob
+    let AdMobID = "ca-app-pub-4365930075666379/9305903644"
+    let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
+    let AdMobTest:Bool = true
+    let SimulatorTest:Bool = true
+    
+    func initializeAdmob(){
+        
+        var admobView: GADBannerView = GADBannerView()
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+        admobView.frame.origin = CGPointMake(0, self.view.frame.size.height - admobView.frame.height)
+        
+        admobView.frame.size = CGSizeMake(self.view.frame.width, admobView.frame.height)
+        admobView.adUnitID = AdMobID
+        admobView.delegate = self
+        admobView.rootViewController = self
+        
+        let admobRequest:GADRequest = GADRequest()
+        
+        if AdMobTest {
+            if SimulatorTest {
+                admobRequest.testDevices = [kGADSimulatorID]
+            }
+            else {
+                admobRequest.testDevices = [TEST_DEVICE_ID]
+            }
+            
+        }
+        
+        admobView.loadRequest(admobRequest)
+        
+        self.view.addSubview(admobView)
+    }
+    // END ADmob
     
     @IBOutlet var takePhotoButton: UIButton!
     @IBOutlet var showAlbumButton: UIButton!
@@ -57,6 +93,9 @@ class TopViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initializeAdmob()
+        
         // Do any additional setup after loading the view.
         initializeColor()
         
