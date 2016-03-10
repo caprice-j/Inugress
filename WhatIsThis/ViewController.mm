@@ -125,6 +125,19 @@ NSString * noticeNSString = @"ではなく ... ";
     if( dogProbability > 0.01 ){
         // 犬であると判定した
         
+        long unsigned idx = max_idx - [MyColor inceptionOffset];
+        
+        // RLMRealm *realm = [RLMRealm defaultRealm];
+        RLMResults *dogs = [DogRecord objectsWhere:[NSString stringWithFormat:@"inceptionIndex == %lu", idx ]  ];
+        bool alreadySaved;
+        if( dogs.count == 0 ){
+            alreadySaved = false;
+            self.unseenIndicatorLabel.text = @"(NEW!)";
+        }else{
+            alreadySaved = true;
+            self.unseenIndicatorLabel.text = @"";
+        }
+        
         self.dogProbabilityLabel.font =[self.dogProbabilityLabel.font fontWithSize:45];
         self.dogProbabilityLabel.text =
         [ NSString stringWithFormat:@"%.1f", [self roundProbability: dogProbability   ] ];
@@ -134,7 +147,7 @@ NSString * noticeNSString = @"ではなく ... ";
         self.baloonLabel.text = @"";
         
         self.inceptionIndexPrefixLabel.text = @"No.";
-        self.inceptionIndexLabel.text = [NSString stringWithFormat:@"%lu", (max_idx - [MyColor inceptionOffset] )];
+        self.inceptionIndexLabel.text = [NSString stringWithFormat:@"%lu", idx ];
         
         if (dogProbability < 0.6 ) {
             // 他に正解の候補がありそう
@@ -262,6 +275,7 @@ NSString * noticeNSString = @"ではなく ... ";
 //    self.saveResultButton.backgroundColor = [MyColorClass backColor];
 
     [self clearRankingText];
+    self.unseenIndicatorLabel.text = @"";
 
     self.baloonLabel.text         = @"";
     self.baloonLabel2.text        = @"";

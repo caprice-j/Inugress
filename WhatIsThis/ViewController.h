@@ -40,6 +40,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *inceptionIndexPrefixLabel;
 @property (weak, nonatomic) IBOutlet UILabel *inceptionIndexLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secondCandidateLabel;
+@property (weak, nonatomic) IBOutlet UILabel *unseenIndicatorLabel;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *dogProbabilityLabel;
