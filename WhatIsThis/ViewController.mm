@@ -406,15 +406,14 @@ NSString * noticeNSString = @"ではなく ... ";
 - (IBAction)saveSelectedImage:(id)sender {
     
     NSString * alertNSString = @"";
-    if( self.imageViewPhoto.image == meanImage ){
+    if( self.imageViewPhoto.image == nil ){
        alertNSString = @"Please specify your image first.";
-    }
-    
-    if( self.imageViewPhoto.image == previousSavedImage ){
+    }else if( self.imageViewPhoto.image == previousSavedImage ){
        alertNSString = @"Already saved.";
     }
     
-    if( self.imageViewPhoto.image == meanImage or
+    if( self.imageViewPhoto.image == nil or
+        self.imageViewPhoto.image == meanImage or
         self.imageViewPhoto.image == previousSavedImage ){
         
         // アラートを出す
